@@ -84,7 +84,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   width={960}
                   height={1280}
                   sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
-                  alt="Me smiling like a goofball at the Qwilr office in Sydney"
+                  alt="Collage of me and my girlfriend, in some daily bits of myself."
                 />
               </div>
             </div>
