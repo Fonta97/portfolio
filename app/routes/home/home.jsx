@@ -4,9 +4,9 @@ import lestrategiedifedeTexture2 from '~/assets/FedeMobile2.png';
 import lestrategiedifedeTexture from '~/assets/gamestack-login-large.jpg';
 import gamestackTexturePlaceholder from '~/assets/LeStrategieDiFedeMobileView.png';
 import lestrategiedifedeTextureLarge from '~/assets/LeStrategieDiFedeMobileView.png';
-import sliceTextureLarge from '~/assets/slice-app-large.jpg';
-import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceTexture from '~/assets/slice-app.jpg';
+import sliceTextureLarge from '~/assets/NETApp.png';
+import sliceTexturePlaceholder from '~/assets/NETApp.png';
+import sliceTexture from '~/assets/NETApp.png';
 import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
 import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
 import sprTexture from '~/assets/prime_edile_laptop.png';
@@ -148,13 +148,13 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
-        buttonText="View project"
+        title="Long term projects collaborations"
+        description="Collaborations with international partners and business"
+        buttonText="View collabs"
         buttonLink="/projects/slice"
         model={{
           type: 'laptop',
-          alt: 'Annotating a biomedical image in the Slice app',
+          alt: 'Image of .NET coding on a laptop',
           textures: [
             {
               srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,

@@ -20,14 +20,14 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m Alessandro, currently I live in Cuneo, Italy. I'm working as a freelance developer & software engineer at{' '}
+      I’m Alessandro, currently I live in Cuneo, Italy. I'm working as a fulltime freelance developer & I was a software engineer at{' '}
       <Link href="https://www.occelli.it">Beppino Occelli</Link>. My projects include web apps, custom API's and many businesses collaborations. Being comfortable with customers since my past experience in the fashion retail and my management skills developed at Foot Locker with code allows me to rapidly
       prototype and validate experiences. If you’re interested in the tools and software I
       use check out my <Link href="/uses">uses page</Link>.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      In my spare time I like to learn new business strategies and new online trends, play video games, and{' '}
-      <Link href="/projects/volkihar-knight">livestream and doing content creation with my friends</Link>. I’m always down for hearing
+      In my spare time I like to learn new business strategies and new online trends, {' '}
+      <Link href="/projects/volkihar-knight"> play video games, livestream and doing content creation with my friends</Link>. I’m always down for hearing
       about new projects, so feel free to drop me a line.
     </Text>
   </Fragment>

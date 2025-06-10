@@ -1,29 +1,31 @@
-__  __  __
-\ \ \ \ \/
- \ \/\ \
-  \/  \/
+    _    _____ 
+   / \  |  ___|
+  / _ \ | |_   
+ / ___ \|  _|  
+/_/   \_\_|    
 
 The humans.txt file explains the team, technology,
 and graphic assets behind this site humanstxt.org.
 
+
 _______________________________________________________________________________
 
-DESIGNER | デザイナー
+DEVELOPER
 
+Fontana Alessandro
+
+www.linkedin.com/in/fonta97
+www.github.com/Fonta97
+_______________________________________________________________________________
+
+DESIGNER 
+
+Based on a Design made by:
 Hamish Williams
-Hand crafted design & web development
-
-Design tools:
-Figma
-Photoshop
-Blender
-
-twitter.com/hamishmw
-github.com/hamishmw
-
+Hand crafted design
 _______________________________________________________________________________
 
-TECHNOLOGY | テクノロジー
+TECHNOLOGY
 
 React
 Remix
@@ -32,7 +34,7 @@ Framer Motion
 
 _______________________________________________________________________________
 
-FONTS | フォント
+FONTS
 
 Gotham
 IPA Gothic Regular

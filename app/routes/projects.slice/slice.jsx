@@ -1,26 +1,26 @@
-import sliceAnnotationLarge from '~/assets/slice-annotation-large.png';
-import sliceAnnotationPlaceholder from '~/assets/slice-annotation-placeholder.png';
-import sliceAnnotation from '~/assets/slice-annotation.png';
-import sliceAppLarge from '~/assets/slice-app-large.jpg';
-import sliceAppPlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceApp from '~/assets/slice-app.jpg';
-import sliceBackgroundBarLarge from '~/assets/slice-background-bar-large.jpg';
-import sliceBackgroundBarPlaceholder from '~/assets/slice-background-bar-placeholder.jpg';
-import sliceBackgroundBar from '~/assets/slice-background-bar.jpg';
-import sliceBackgroundLarge from '~/assets/slice-background-large.jpg';
-import sliceBackgroundPlaceholder from '~/assets/slice-background-placeholder.jpg';
-import sliceBackground from '~/assets/slice-background.jpg';
-import sliceIrlPlaceholder from '~/assets/slice-irl-placeholder.jpg';
-import sliceIrl from '~/assets/slice-irl.jpg';
-import sliceSidebarAnnotationsLarge from '~/assets/slice-sidebar-annotations-large.png';
-import sliceSidebarAnnotationsPlaceholder from '~/assets/slice-sidebar-annotations-placeholder.png';
-import sliceSidebarAnnotations from '~/assets/slice-sidebar-annotations.png';
-import sliceSidebarLayersLarge from '~/assets/slice-sidebar-layers-large.png';
-import sliceSidebarLayersPlaceholder from '~/assets/slice-sidebar-layers-placeholder.png';
-import sliceSidebarLayers from '~/assets/slice-sidebar-layers.png';
-import sliceSlidesLarge from '~/assets/slice-slides-large.jpg';
-import sliceSlidesPlaceholder from '~/assets/slice-slides-placeholder.jpg';
-import sliceSlides from '~/assets/slice-slides.jpg';
+import beppinoOccelliLarge from '~/assets/BeppinoOccelli.jpg';
+import beppinoOccelliPlaceholder from '~/assets/slice-annotation-placeholder.png';
+import beppinoOccelli from '~/assets/BeppinoOccelli.jpg';
+import jeenkaStoryLarge from '~/assets/Jeenka.jpg';
+import jeenkaStoryPlaceholder from '~/assets/slice-app-placeholder.jpg';
+import jeenkaStory from '~/assets/Jeenka.jpg';
+import muuOccelliLarge from '~/assets/muudiocan.jpg';
+import muuOccelliPlaceholder from '~/assets/slice-background-bar-placeholder.jpg';
+import muuOccelli from '~/assets/muudiocan.jpg';
+import em2cWebDescriptionLarge from '~/assets/space_earth.jpg';
+import em2cWebDescriptionPlaceholder from '~/assets/slice-background-placeholder.jpg';
+import em2cWebDescription from '~/assets/slice-background.jpg';
+import hackerzzzPlaceholder from '~/assets/slice-irl-placeholder.jpg';
+import hackerzzz from '~/assets/hackerzzzzz.jpg';
+import jeenkaPlaceLarge from '~/assets/SedeJeenka.jpg';
+import jeenkaPlacePlaceholder from '~/assets/slice-sidebar-annotations-placeholder.png';
+import jeenkaPlace from '~/assets/SedeJeenka.jpg';
+import jeenkaPlace2Large from '~/assets/Milano.jpg';
+import jeenkaPlace2Placeholder from '~/assets/slice-sidebar-layers-placeholder.png';
+import jeenkaPlace2 from '~/assets/Milano.jpg';
+import emc2WebLarge from '~/assets/emc2web.png';
+import emc2WebPlaceholder from '~/assets/slice-slides-placeholder.jpg';
+import emc2Web from '~/assets/emc2web.png';
 import { Footer } from '~/components/footer';
 import { Image } from '~/components/image';
 import {
@@ -40,10 +40,10 @@ import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import styles from './slice.module.css';
 
-const title = 'Biomedical image collaboration';
+const title = 'Partners I work with';
 const description =
-  'This project involved designing a better way for biomedical educators and learners to annotate digital slides together.';
-const roles = ['User Research', 'UX Design', 'Interface Design'];
+  'In this section, you can see all of the main partners I work with such as Jeenka.';
+const roles = ['Teamwork', 'UX Design', 'Worldwide Experience'];
 
 export const meta = () => {
   return baseMeta({ title, description, prefix: 'Projects' });
@@ -54,27 +54,27 @@ export const Slice = () => {
     <Fragment>
       <ProjectContainer className={styles.slice}>
         <ProjectBackground
-          src={sliceBackground}
-          srcSet={`${sliceBackground} 1280w, ${sliceBackgroundLarge} 2560w`}
+          src={em2cWebDescription}
+          srcSet={`${em2cWebDescription} 1280w, ${em2cWebDescriptionLarge} 2560w`}
           width={1280}
           height={800}
-          placeholder={sliceBackgroundPlaceholder}
+          placeholder={em2cWebDescriptionPlaceholder}
           opacity={0.8}
         />
         <ProjectHeader
           title={title}
           description={description}
-          url="https://www.best.edu.au/s/q2yjjvl7?data=8%404!9%4020303!10%40-15087&version=1"
+          url="https://jeenka.com/"
           roles={roles}
         />
         <ProjectSection padding="top">
           <ProjectSectionContent>
             <ProjectImage
-              srcSet={`${sliceApp} 800w, ${sliceAppLarge} 1920w`}
+              srcSet={`${jeenkaStory} 800w, ${jeenkaStoryLarge} 1920w`}
               width={800}
               height={500}
-              placeholder={sliceAppPlaceholder}
-              alt="The Slice web application showing a selected user annotation."
+              placeholder={jeenkaStoryPlaceholder}
+              alt="Jeenka place in Milan"
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 90vw, 80vw`}
             />
           </ProjectSectionContent>
@@ -82,35 +82,31 @@ export const Slice = () => {
         <ProjectSection>
           <ProjectSectionColumns centered className={styles.columns}>
             <div className={styles.imagesText}>
-              <ProjectSectionHeading>Bringing it together</ProjectSectionHeading>
+              <ProjectSectionHeading>Freelance Dev for Jeenka. an International Partner</ProjectSectionHeading>
               <ProjectSectionText>
-                Teachers needed a better way to create collaborative group activities by
-                annotating slides on Slice. Before starting this project, a layer could
-                only be annotated by a single user, making it difficult for learners to
-                work together.
+                Jeenka is a one-stop shop digital solutions partner I've been collaborating with since 2025 on various projects.
               </ProjectSectionText>
               <ProjectSectionText>
-                Our solution was to allow users to be invited to a layer, where they can
-                see others’ annotations and make their own.
+                We've helped many international clients bring their projects to life — from Laravel APIs to personalized WordPress sites with custom plugins, all designed to deliver the best possible UX and UI for the end user.
               </ProjectSectionText>
             </div>
             <div className={styles.sidebarImages}>
               <Image
                 className={styles.sidebarImage}
-                srcSet={`${sliceSidebarLayers} 350w, ${sliceSidebarLayersLarge} 700w`}
+                srcSet={`${jeenkaPlace2} 350w, ${jeenkaPlace2Large} 700w`}
                 width={350}
                 height={750}
-                placeholder={sliceSidebarLayersPlaceholder}
-                alt="The layers sidebar design, now with user profiles."
+                placeholder={jeenkaPlace2Placeholder}
+                alt="Jeenka logo"
                 sizes={`(max-width: ${media.mobile}px) 200px, 343px`}
               />
               <Image
                 className={styles.sidebarImage}
-                srcSet={`${sliceSidebarAnnotations} 350w, ${sliceSidebarAnnotationsLarge} 700w`}
+                srcSet={`${jeenkaPlace} 350w, ${jeenkaPlaceLarge} 700w`}
                 width={350}
                 height={750}
-                placeholder={sliceSidebarAnnotationsPlaceholder}
-                alt="Multiple user annotations on a shared layer."
+                placeholder={jeenkaPlacePlaceholder}
+                alt="Milan city view"
                 sizes={`(max-width: ${media.mobile}px) 200px, 343px`}
               />
             </div>
@@ -119,22 +115,17 @@ export const Slice = () => {
         <ProjectSection light>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading>Improving the experience</ProjectSectionHeading>
+              <ProjectSectionHeading>Work with Emc2 Web digital agency</ProjectSectionHeading>
               <ProjectSectionText>
-                A problem we heard about often form users was that it was difficult to
-                find images they had previously seen or worked on. To solve this we added
-                a new tab that lists all previously annotated slides. In addition, we
-                added the ability to favorite slides, so if users find an interesting
-                slide they want to annotate later, they can easily save it to their
-                account.
+                Lately, I've also been collaborating with another digital agency, Emc2 Web based in Turin. As a freelance developer, I enjoy expanding my horizons and diving into new and exciting projects!
               </ProjectSectionText>
             </ProjectTextRow>
             <Image
-              srcSet={`${sliceSlides} 800w, ${sliceSlidesLarge} 1920w`}
+              srcSet={`${emc2Web} 800w, ${emc2WebLarge} 1920w`}
               width={800}
               height={500}
-              placeholder={sliceSlidesPlaceholder}
-              alt="The new My Slides tab in slice, showing annotated and favorited slides."
+              placeholder={emc2WebPlaceholder}
+              alt="Homepage of emc2web"
               sizes={`(max-width: ${media.mobile}px) 500px, (max-width: ${media.tablet}px) 800px, 1000px`}
             />
           </ProjectSectionContent>
@@ -144,34 +135,30 @@ export const Slice = () => {
             <div className={styles.gridImage}>
               <div className={styles.gridBackground}>
                 <Image
-                  srcSet={`${sliceBackgroundBar} 440w, ${sliceBackgroundBarLarge} 880w`}
+                  srcSet={`${muuOccelli} 440w, ${muuOccelliLarge} 880w`}
                   width={440}
                   height={790}
-                  placeholder={sliceBackgroundBarPlaceholder}
-                  alt=""
+                  placeholder={muuOccelliPlaceholder}
+                  alt="a cow"
                   role="presentation"
                   sizes={`(max-width: ${media.mobile}px) 312px, (max-width: ${media.tablet}px) 408px, 514px`}
                 />
               </div>
               <div className={styles.gridForeground}>
                 <Image
-                  srcSet={`${sliceAnnotation} 440w, ${sliceAnnotationLarge} 880w`}
+                  srcSet={`${beppinoOccelli} 440w, ${beppinoOccelliLarge} 880w`}
                   width={440}
                   height={340}
-                  placeholder={sliceAnnotationPlaceholder}
-                  alt="An annotation preview popover with statistics for shape perimeter and area."
+                  placeholder={beppinoOccelliPlaceholder}
+                  alt="Beppino Occelli Logo"
                   sizes={`(max-width: ${media.mobile}px) 584px, (max-width: ${media.tablet}px) 747px, 556px`}
                 />
               </div>
             </div>
             <div className={styles.gridText}>
-              <ProjectSectionHeading>Meaningful details</ProjectSectionHeading>
+              <ProjectSectionHeading>IT Intern at Beppino Occelli</ProjectSectionHeading>
               <ProjectSectionText>
-                Marking and annotating areas on high resolution biomedical images is the
-                core experience of the app, and it was easy to get lost or lose sense of
-                scale when zooming in on details. Adding measurements for the perimeter
-                and area of an annotation both helped to communicate the overall scale of
-                the image and how large the annotated feature is in comparison.
+                I worked as an IT intern at Beppino Occelli, a major Italian dairy company with global reach. I helped develop their Shopify website and custom APIs for both e-commerce and their ERP system (C#, .NET, ASP.NET), also migrating legacy Access databases to SQL. It was a key experience that boosted my confidence in industrial tech environments.
               </ProjectSectionText>
             </div>
           </ProjectSectionContent>
@@ -179,21 +166,21 @@ export const Slice = () => {
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading>Project outcomes</ProjectSectionHeading>
+              <ProjectSectionHeading>Collaborations & Results</ProjectSectionHeading>
               <ProjectSectionText>
-                Real-time collaborative annotation facilitated better collaboration
-                between learners, and was much easier to run group exercises with the new
-                shared layers feature. Learners gave feedback that is was enjoyable to
-                work together and see what others were doing, and liked how interactive
-                and easy to use the application was.
+                Working with companies like Jeenka, Emc2 Web, and Beppino Occelli has given me the chance to grow both technically and professionally. These collaborations exposed me to real-world challenges across different industries — from e-commerce and custom ERP systems to full-stack development for agencies.
+
+Each project helped me refine my skills in backend development, UI/UX implementation, and API integration, while also improving my communication, adaptability, and problem-solving mindset.
+
+More than just writing code, I learned how to deliver real value to teams and clients — and that's what keeps driving my passion for tech.
               </ProjectSectionText>
             </ProjectTextRow>
             <Image
-              src={sliceIrl}
+              src={hackerzzz}
               width={940}
               height={500}
-              placeholder={sliceIrlPlaceholder}
-              alt="Students at the University of New South Wales using the new collaborative annotation features"
+              placeholder={hackerzzzPlaceholder}
+              alt="Code on a pc screen"
             />
           </ProjectSectionContent>
         </ProjectSection>

@@ -70,13 +70,13 @@ const EarthSection = lazy(() =>
   import('./earth').then(module => ({ default: module.EarthSection }))
 );
 
-const title = 'Designing the future of education';
+const title = '01 Corporate Presence';
 const description =
-  'I worked as the design lead on a major iteration of Smart Sparrow’s product. We took the platform in a bold new direction, focusing on becoming the best tool for learning designers.';
+  'Building clean, modern corporate websites that communicate brand value and drive trust. From intuitive information architecture to subtle motion cues, your business story gets told with clarity and polish.';
 const roles = [
-  'Art Direction',
-  'UX and UI Design',
-  'Front End Development',
+  'UX / UI Design',
+  'Front-End/Back-End Engineering',
+  'CMS & API',
   'Motion Design',
 ];
 
@@ -105,7 +105,7 @@ export const SmartSparrow = () => {
         <ProjectHeader
           title={title}
           description={description}
-          url="https://www.smartsparrow.com/"
+          url="https://www.primeimpresaedile.it/"
           roles={roles}
         />
         <ProjectSection padding="top">
@@ -132,15 +132,9 @@ export const SmartSparrow = () => {
         </ProjectSection>
         <ProjectSection>
           <ProjectTextRow>
-            <ProjectSectionHeading>The problem</ProjectSectionHeading>
+            <ProjectSectionHeading>02 E-Commerce Engines</ProjectSectionHeading>
             <ProjectSectionText>
-              In 2017, Smart Sparrow began a project to build an entirely new platform to
-              from the ground up to serve as the most powerful tool for educators to
-              create online learning experiences. The old platform was built in Flash, and
-              there were a number of user experience problems to solve in the process of
-              moving the platform to Javascript. The primary goals for the project were
-              reducing barriers to collaboration, and making the platform both easier for
-              new users, but with plenty of room to scale for advanced users.
+              Full-funnel stores that convert: custom WooCommerce & Shopify builds, secure payments, blazing-fast loads, and backend integrations that keep inventory, shipping and finance teams perfectly in sync.
             </ProjectSectionText>
           </ProjectTextRow>
         </ProjectSection>
@@ -164,13 +158,13 @@ export const SmartSparrow = () => {
               sizes="100vw"
             />
             <ProjectTextRow>
-              <SegmentedControl
+              {/* <SegmentedControl
                 currentIndex={themes.indexOf(theme)}
                 onChange={handleThemeChange}
               >
                 <SegmentedControlOption>Dark theme</SegmentedControlOption>
                 <SegmentedControlOption>Light theme</SegmentedControlOption>
-              </SegmentedControl>
+              </SegmentedControl> */}
             </ProjectTextRow>
             <ProjectTextRow>
               <ProjectSectionHeading>The aero design system</ProjectSectionHeading>
