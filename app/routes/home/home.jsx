@@ -13,11 +13,11 @@ import sprTexture from '~/assets/prime_edile_laptop.png';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
-import { Profile } from '~/profile';
-import { ProjectSummary } from '~/project-summary';
+import { Profile } from './profile';
+import { ProjectSummary } from './project-summary';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
-import styles from '~/home.module.css';
+import styles from './home.module.css';
 
 // Prefetch draco decoader wasm
 export const links = () => {
