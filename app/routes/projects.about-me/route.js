@@ -1,1 +1,2 @@
-export { VolkiharKnight as default, meta } from './volkihar-knight';
+export { default } from './volkihar-knight';
+export * from './volkihar-knight';

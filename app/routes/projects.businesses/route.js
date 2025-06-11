@@ -1,1 +1,2 @@
-export { SmartSparrow as default, meta } from './smart-sparrow';
+export { default } from './smart-sparrow';
+export * from './smart-sparrow';
