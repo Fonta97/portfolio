@@ -27,7 +27,7 @@ const ProfileText = ({ visible, titleId }) => (
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
       In my spare time I like to learn new business strategies and new online trends, {' '}
-      <Link href="/projects/volkihar-knight"> play video games, livestream and doing content creation with my friends</Link>. I’m always down for hearing
+      <Link href="/projects/about-me"> play video games, livestream and doing content creation with my friends</Link>. I’m always down for hearing
       about new projects, so feel free to drop me a line.
     </Text>
   </Fragment>

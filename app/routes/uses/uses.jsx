@@ -1,5 +1,5 @@
 import usesBackgroundPlaceholder from '~/assets/uses-background-placeholder.jpg';
-import usesBackground from '~/assets/uses-background.mp4';
+import usesBackground from '~/assets/Hackerman.mp4';
 import { Footer } from '~/components/footer';
 import { Link } from '~/components/link';
 import { List, ListItem } from '~/components/list';
@@ -35,7 +35,7 @@ export const Uses = () => {
         />
         <ProjectHeader
           title="Uses"
-          description="A somewhat comprehensive list of tools, apps, hardware, and more that I use on a daily basis to design and code things. And yeah, that is a Johnny Mnemonic GIF in the background."
+          description="A somewhat comprehensive list of tools, apps, hardware, and more that I use on a daily basis to design and code things. And yeah, that is Hackerman from Kung Fury (2015) on the background."
         />
         <ProjectSection padding="none" className={styles.section}>
           <ProjectSectionContent>
@@ -45,21 +45,15 @@ export const Uses = () => {
                 <List>
                   <ListItem>
                     <Link href="https://www.figma.com">Figma</Link> is my primary tool for
-                    UI design these days. Made the switch from Sketch in 2020 and haven’t
-                    looked back. I’ve also created{' '}
-                    <Link href="https://www.figma.com/@hamish">a few plugins</Link> that
-                    you can install.
+                    UI design these days. For complex projects, I build on layouts crafted by my friend and outstanding UX/UI designer{' '}
+                    <Link href="https://www.linkedin.com/in/michela-risso/">Michela Risso</Link>.
                   </ListItem>
                   <ListItem>
-                    Any motion graphics I create are created in Adobe After Effects. So
-                    far I haven’t found a non-Adobe product that’s as good. If anyone has
-                    suggestions please <Link href="/contact">message me</Link>.
+                    All of my motion graphics start in Canva or Freepik, where I take advantage of their AI-powered features.
                   </ListItem>
                   <ListItem>
-                    For any 3D models and video editing I use{' '}
-                    <Link href="https://www.blender.org/">Blender</Link>. Since 2.8 it’s
-                    become way simpler to use and in a lot of ways better than expensive
-                    paid tools like 3DS Max or Maya.
+                    For 3D assets and graphic design, I collaborate with trusted specialist partners such as <Link href="https://www.behance.net/gallery/220588019/Graphic-Designer-Portfolio">Alessandro Cavallo</Link>, while all video editing is handled by my good friend <Link href="https://www.tiktok.com/@monywzn">Marco Monastero</Link> — a renowned Italian content creator and outstanding videomaker{' '}
+                    . 
                   </ListItem>
                 </List>
               </ProjectSectionText>
@@ -73,41 +67,31 @@ export const Uses = () => {
               <ProjectSectionText as="div">
                 <List>
                   <ListItem>
-                    I use <Link href="https://vscodium.com/">VSCodium</Link> as my text
-                    editor, with the Tokyo Night theme and Operator Mono as my typeface of
-                    choice.
+                    I use <Link href="https://code.visualstudio.com/">VSCode</Link> and <Link href="https://visualstudio.microsoft.com">Visual Studio 2022</Link>  as my text
+                    editor, the second one for C# and .NET projects.
                   </ListItem>
                   <ListItem>
-                    Firefox is my main browser for both development and general use.
+                    Brave is my main browser for both development and general use.
                   </ListItem>
                   <ListItem>
                     <Link href="https://reactjs.org/">React</Link> is my front end
                     Javascript library of choice. The component-centric mental model is
-                    the first thing that truly made sense to me as a designer.
+                    the first thing that truly made sense to me as a developer.
                   </ListItem>
                   <ListItem>
                     For 3D effects and image shaders I use{' '}
                     <Link href="https://threejs.org/">three.js</Link>. It has a bit of a
-                    learning curve but you can do some really powerful stuff with it.
+                    learning curve but you can do some really powerful stuff with it such this site.
                   </ListItem>
                   <ListItem>
                     For CSS I’ve used a myriad pre-processors and css-in-js solutions like
-                    styled-components, but these days I’m using vanilla CSS with{' '}
-                    <Link href="https://postcss.org/">PostCSS</Link> to get upcoming CSS
+                    styled-components, but these days I’m using vanilla CSS or SASS to get upcoming CSS
                     features today.
                   </ListItem>
                   <ListItem>
                     For Javascript animations I use{' '}
                     <Link href="https://www.framer.com/motion/">Framer Motion</Link>, it’s
                     a great way to add spring animations to React and three.js.
-                  </ListItem>
-                  <ListItem>
-                    For building and testing UI components in isolation I use{' '}
-                    <Link href="https://storybook.js.org/">Storybook</Link>. Check out the{' '}
-                    <Link href="https://storybook.hamishw.com">
-                      storybook for this website
-                    </Link>
-                    .
                   </ListItem>
                 </List>
               </ProjectSectionText>
@@ -126,35 +110,35 @@ export const Uses = () => {
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Operating system</TableHeadCell>
-                    <TableCell>Arch Linux (by the way)</TableCell>
+                    <TableCell>Windows 11</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Browser</TableHeadCell>
-                    <TableCell>Zen Browser</TableCell>
+                    <TableCell>Brave Browser</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Monitor</TableHeadCell>
-                    <TableCell>1440p IPS 144hz LG 27GL850</TableCell>
+                    <TableCell>One 21:9 LG Monitor and one 1080p vertical BenQ monitor</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Keyboard</TableHeadCell>
-                    <TableCell>Tofu65</TableCell>
+                    <TableCell>Custom Mechanical Keyboard</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Mouse</TableHeadCell>
-                    <TableCell>Logitech G403</TableCell>
+                    <TableCell>Logitech MX Master 3S</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Laptop</TableHeadCell>
-                    <TableCell>Macbook Pro 14″</TableCell>
+                    <TableCell>One Lenovo L14 Thinkpad (2022) and a Legion 5 (2022)</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Headphones</TableHeadCell>
-                    <TableCell>Audio Technica ATH-M50x/Apple Airpods</TableCell>
+                    <TableCell>Razer Barracuda/Nothing Ear (a)</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Microphone</TableHeadCell>
-                    <TableCell>Blue Yeti</TableCell>
+                    <TableCell>Samson Meteor</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>

@@ -1,3 +1,4 @@
+import React, { Suspense, lazy, useState } from 'react';
 import { Button } from '~/components/button';
 import { Divider } from '~/components/divider';
 import { Heading } from '~/components/heading';
@@ -8,18 +9,28 @@ import { useTheme } from '~/components/theme-provider';
 import { Transition } from '~/components/transition';
 import { Loader } from '~/components/loader';
 import { useWindowSize } from '~/hooks';
-import { Suspense, lazy, useState } from 'react';
 import { cssProps, media } from '~/utils/style';
 import { useHydrated } from '~/hooks/useHydrated';
-import katakana from './katakana.svg';
 import styles from './project-summary.module.css';
 
-const Model = lazy(() =>
-  import('~/components/model').then(module => ({ default: module.Model }))
-);
+/* SVG assets */
+import businessesSvg from '~/assets/businesses.svg';
+import wpshopifySvg from '~/assets/wp&shopify.svg';
+import collabsSvg from '~/assets/collabs.svg';
+
+// Lazy‑load the 3D model component
+const Model = lazy(() => import('~/components/model').then(m => ({ default: m.Model })));
+
+// Map logo keys to imported svg files
+const logoMap = {
+  businesses: businessesSvg,
+  wpshopify: wpshopifySvg,
+  collabs: collabsSvg,
+};
 
 export function ProjectSummary({
   id,
+  logo, // new prop
   visible: sectionVisible,
   sectionRef,
   index,
@@ -47,19 +58,19 @@ export function ProjectSummary({
     setModelLoaded(true);
   }
 
-  function renderKatakana(device, visible) {
+  function renderBadge(device, visible, logoKey) {
+    const src = logoMap[logoKey];
+    if (!src) return null;
     return (
-      <svg
-        type="project"
-        data-visible={visible && modelLoaded}
-        data-light={theme === 'light'}
-        style={cssProps({ opacity: svgOpacity })}
+      <img
+        src={src}
+        alt=""
+        aria-hidden="true"
         className={styles.svg}
         data-device={device}
-        viewBox="0 0 751 136"
-      >
-        <use href={`${katakana}#katakana-project`} />
-      </svg>
+        data-visible={visible && modelLoaded}
+        style={cssProps({ opacity: svgOpacity })}
+      />
     );
   }
 
@@ -67,23 +78,12 @@ export function ProjectSummary({
     return (
       <div className={styles.details}>
         <div aria-hidden className={styles.index}>
-          <Divider
-            notchWidth="64px"
-            notchHeight="8px"
-            collapsed={!visible}
-            collapseDelay={1000}
-          />
+          <Divider notchWidth="64px" notchHeight="8px" collapsed={!visible} collapseDelay={1000} />
           <span className={styles.indexNumber} data-visible={visible}>
             {indexText}
           </span>
         </div>
-        <Heading
-          level={3}
-          as="h2"
-          className={styles.title}
-          data-visible={visible}
-          id={titleId}
-        >
+        <Heading level={3} as="h2" className={styles.title} data-visible={visible} id={titleId}>
           {title}
         </Heading>
         <Text className={styles.description} data-visible={visible} as="p">
@@ -103,11 +103,9 @@ export function ProjectSummary({
       <div className={styles.preview}>
         {model.type === 'laptop' && (
           <>
-            {renderKatakana('laptop', visible)}
+            {renderBadge('laptop', visible, logo)}
             <div className={styles.model} data-device="laptop">
-              {!modelLoaded && (
-                <Loader center className={styles.loader} data-visible={visible} />
-              )}
+              {!modelLoaded && <Loader center className={styles.loader} data-visible={visible} />}
               {isHydrated && visible && (
                 <Suspense>
                   <Model
@@ -116,15 +114,10 @@ export function ProjectSummary({
                     showDelay={700}
                     onLoad={handleModelLoad}
                     show={visible}
-                    models={[
-                      {
-                        ...deviceModels.laptop,
-                        texture: {
-                          ...model.textures[0],
-                          sizes: laptopSizes,
-                        },
-                      },
-                    ]}
+                    models={[{
+                      ...deviceModels.laptop,
+                      texture: { ...model.textures[0], sizes: laptopSizes },
+                    }]}
                   />
                 </Suspense>
               )}
@@ -133,11 +126,9 @@ export function ProjectSummary({
         )}
         {model.type === 'phone' && (
           <>
-            {renderKatakana('phone', visible)}
+            {renderBadge('phone', visible, logo)}
             <div className={styles.model} data-device="phone">
-              {!modelLoaded && (
-                <Loader center className={styles.loader} data-visible={visible} />
-              )}
+              {!modelLoaded && <Loader center className={styles.loader} data-visible={visible} />}
               {isHydrated && visible && (
                 <Suspense>
                   <Model
@@ -150,18 +141,12 @@ export function ProjectSummary({
                       {
                         ...deviceModels.phone,
                         position: { x: -0.6, y: 1.1, z: 0 },
-                        texture: {
-                          ...model.textures[0],
-                          sizes: phoneSizes,
-                        },
+                        texture: { ...model.textures[0], sizes: phoneSizes },
                       },
                       {
                         ...deviceModels.phone,
                         position: { x: 0.6, y: -0.5, z: 0.3 },
-                        texture: {
-                          ...model.textures[1],
-                          sizes: phoneSizes,
-                        },
+                        texture: { ...model.textures[1], sizes: phoneSizes },
                       },
                     ]}
                   />

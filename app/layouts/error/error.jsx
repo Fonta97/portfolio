@@ -1,5 +1,5 @@
 import notFoundPoster from '~/assets/notfound.jpg';
-import notFoundVideo from '~/assets/notfound.mp4';
+import notFoundVideo from '~/assets/404_lost_John.mp4';
 import flatlinePoster from '~/assets/flatline.png';
 import flatlineVideo from '~/assets/flatline.mp4';
 import { Button } from '~/components/button';
@@ -103,7 +103,7 @@ export function Error({ error }) {
                     iconHoverShift
                     className={styles.button}
                     data-visible={visible}
-                    href="https://www.youtube.com/watch?v=EuQzHGcsjlA"
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                     icon="chevron-right"
                   >
                     Emotional support
@@ -147,11 +147,11 @@ export function Error({ error }) {
                 <a
                   className={styles.credit}
                   data-visible={visible}
-                  href="https://www.imdb.com/title/tt0113568/"
+                  href="https://www.imdb.com/title/tt0110912/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Animation from Ghost in the Shell (1995)
+                  John Travolta in Pulp Fiction (1994)
                 </a>
               )}
             </div>

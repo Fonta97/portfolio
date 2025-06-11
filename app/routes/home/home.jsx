@@ -100,13 +100,14 @@ export const Home = () => {
       />
       <ProjectSummary
         id="project-1"
+        logo="businesses"
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
         title="Developing businesses sites"
         description="Developing a site to help businesses of all sizes establish an online presence."
         buttonText="View sites"
-        buttonLink="/projects/smart-sparrow"
+        buttonLink="/projects/businesses"
         model={{
           type: 'laptop',
           alt: 'Prime Impresa Edile site displayed on a laptop screen',
@@ -120,14 +121,15 @@ export const Home = () => {
       />
       <ProjectSummary
         id="project-2"
+        logo="wpshopify"
         alternate
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
         title="Wordpress & Shopify Sites"
         description="Design and development of custom E-Commerce solutions with automations and API integrations"
-        buttonText="View Projects"
-        buttonLink="https://gamestack.hamishw.com"
+        buttonText="View Latests Projects Updates On LinkedIn"
+        buttonLink="https://www.linkedin.com/in/fonta97/"
         model={{
           type: 'phone',
           alt: 'Mobile Optimization view of a site on phone screen',
@@ -145,13 +147,14 @@ export const Home = () => {
       />
       <ProjectSummary
         id="project-3"
+        logo="collabs"
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
         title="Long term projects collaborations"
         description="Collaborations with international partners and business"
         buttonText="View collabs"
-        buttonLink="/projects/slice"
+        buttonLink="/projects/collabs"
         model={{
           type: 'laptop',
           alt: 'Image of .NET coding on a laptop',
