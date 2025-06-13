@@ -1,23 +1,35 @@
+/* app/styles/reset.css */
+
 @layer base {
-  :global(:root) {
+  /* Font smoothing e rendering ottimizzato */
+  :root {
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
   }
 
-  :global(:where(html, body)) {
+  /* Dimensioni base di html e body */
+  html,
+  body {
     min-height: 100%;
     width: 100%;
   }
 
-  :global(:where(*, *::before, *::after)) {
+  /* Box-sizing e margin reset */
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
     margin: 0;
     min-width: 0;
   }
 
-  :global(:where(input, textarea, select, button)) {
+  /* Form elements reset */
+  input,
+  textarea,
+  select,
+  button {
     font: inherit;
     color: inherit;
     border: 0;
@@ -27,19 +39,29 @@
     appearance: none;
   }
 
-  :global(:where(button, a)) {
+  /* Touch action per button e link */
+  button,
+  a {
     touch-action: manipulation;
   }
 
-  :global(:where(svg, img, picture, video, iframe, canvas)) {
+  /* Media elements come block */
+  svg,
+  img,
+  picture,
+  video,
+  iframe,
+  canvas {
     display: block;
   }
 
-  :global(:any-link) {
+  /* Reset link decoration */
+  :any-link {
     text-decoration: none;
   }
 
-  :global(ul) {
+  /* Rimuovi padding dalle liste */
+  ul {
     padding: 0;
   }
 }
