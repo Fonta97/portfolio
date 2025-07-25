@@ -4,7 +4,7 @@ import { tokens } from '~/components/theme-provider/theme';
 import { Transition } from '~/components/transition';
 import { classes, cssProps, msToNum } from '~/utils/style';
 import { TextArea } from './text-area';
-
+import styles from './input.module.css';
 
 export const Input = ({
   id,
@@ -41,14 +41,14 @@ export const Input = ({
 
   return (
     <div
-      className={classes('container', className)}
+      className={classes(styles.container, className)}
       data-error={!!error}
       style={style}
       {...rest}
     >
-      <div className={'content'}>
+      <div className={styles.content}>
         <label
-          className={'label'}
+          className={styles.label}
           data-focused={focused}
           data-filled={!!value}
           id={labelId}
@@ -57,7 +57,7 @@ export const Input = ({
           {label}
         </label>
         <InputElement
-          className={'input'}
+          className={styles.input}
           id={inputId}
           aria-labelledby={labelId}
           aria-describedby={error ? errorId : undefined}
@@ -71,13 +71,13 @@ export const Input = ({
           type={type}
           name={name}
         />
-        <div className={'underline'} data-focused={focused} />
+        <div className={styles.underline} data-focused={focused} />
       </div>
       <Transition unmount in={error} timeout={msToNum(tokens.base.durationM)}>
         {({ visible, nodeRef }) => (
           <div
             ref={nodeRef}
-            className={'error'}
+            className={styles.error}
             data-visible={visible}
             id={errorId}
             role="alert"
@@ -85,7 +85,7 @@ export const Input = ({
               height: visible ? errorRef.current?.getBoundingClientRect().height : 0,
             })}
           >
-            <div className={'errorMessage'} ref={errorRef}>
+            <div className={styles.errorMessage} ref={errorRef}>
               <Icon icon="error" />
               {error}
             </div>

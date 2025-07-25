@@ -53,7 +53,7 @@ import {
   textureLoader,
 } from '~/utils/three';
 import { throttle } from '~/utils/throttle';
-
+import styles from './earth.module.css';
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -429,7 +429,7 @@ export const Earth = ({
       labelContainer.current.innerHTML = '';
       labelElements.current = labels.map(label => {
         const element = document.createElement('div');
-        element.classList.add('label');
+        element.classList.add(styles.label);
         element.dataset.hidden = true;
         element.style.setProperty('--delay', `${label.delay || 0}ms`);
         element.textContent = label.text;
@@ -661,25 +661,25 @@ export const Earth = ({
 
   return (
     <EarthContext.Provider value={{ registerSection, unregisterSection }}>
-      <div className={classes('earth', className)} ref={container}>
-        <div className={'viewport'}>
+      <div className={classes(styles.earth, className)} ref={container}>
+        <div className={styles.viewport}>
           <canvas
-            className={'canvas'}
+            className={styles.canvas}
             data-visible={loaded && visible}
             data-grabbing={grabbing}
             ref={canvas}
           />
-          <div className={'labels'} aria-live="polite" ref={labelContainer} />
-          <div className={'vignette'} />
+          <div className={styles.labels} aria-live="polite" ref={labelContainer} />
+          <div className={styles.vignette} />
         </div>
-        <div className={'sections'}>{children}</div>
+        <div className={styles.sections}>{children}</div>
         <Transition
           unmount
           in={!loaded && loaderVisible}
           timeout={msToNum(tokens.base.durationL)}
         >
           {visible => (
-            <Section className={'loader'} data-visible={visible}>
+            <Section className={styles.loader} data-visible={visible}>
               <Loader />
             </Section>
           )}
@@ -727,7 +727,7 @@ export const EarthSection = memo(
 
     return (
       <div
-        className={classes('section', className)}
+        className={classes(styles.section, className)}
         data-scrim={scrim}
         data-scrim-reverse={scrimReverse}
         ref={sectionRef}

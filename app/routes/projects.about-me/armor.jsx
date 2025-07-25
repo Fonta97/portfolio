@@ -26,7 +26,7 @@ import {
 import { classes, cssProps, msToNum, numToMs } from '~/utils/style';
 import { cleanRenderer, cleanScene, modelLoader, removeLights } from '~/utils/three';
 import { throttle } from '~/utils/throttle';
-
+import styles from './armor.module.css';
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -208,7 +208,7 @@ export const Armor = ({
 
   return (
     <div
-      className={classes('armor', className)}
+      className={classes(styles.armor, className)}
       ref={container}
       role="img"
       aria-label={alt}
@@ -219,10 +219,10 @@ export const Armor = ({
         in={!loaded && loaderVisible}
         timeout={msToNum(tokens.base.durationL)}
       >
-        {({ visible }) => <Loader className={'loader'} data-visible={visible} />}
+        {({ visible }) => <Loader className={styles.loader} data-visible={visible} />}
       </Transition>
       <canvas
-        className={'canvas'}
+        className={styles.canvas}
         ref={canvas}
         data-loaded={loaded && visible}
         style={cssProps({ delay: numToMs(showDelay) })}

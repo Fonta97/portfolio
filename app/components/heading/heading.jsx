@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { classes } from '~/utils/style';
-
+import styles from './heading.module.css';
 
 export const Heading = ({
   children,
@@ -17,7 +17,7 @@ export const Heading = ({
   return (
     <Fragment>
       <Component
-        className={classes('heading', className)}
+        className={classes(styles.heading, className)}
         data-align={align}
         data-weight={weight}
         data-level={clampedLevel}

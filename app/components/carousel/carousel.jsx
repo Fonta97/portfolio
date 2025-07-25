@@ -15,7 +15,7 @@ import {
 import { resolveSrcFromSrcSet } from '~/utils/image';
 import { cssProps } from '~/utils/style';
 import { cleanRenderer, cleanScene, textureLoader } from '~/utils/three';
-
+import styles from './carousel.module.css';
 import fragment from './carousel-fragment.glsl?raw';
 import vertex from './carousel-vertex.glsl?raw';
 
@@ -350,27 +350,27 @@ export const Carousel = ({ width, height, images, placeholder, ...rest }) => {
 
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-    <div className={'carousel'} onKeyDown={handleKeyDown} {...rest}>
-      <div className={'content'}>
+    <div className={styles.carousel} onKeyDown={handleKeyDown} {...rest}>
+      <div className={styles.content}>
         <div
-          className={'imageWrapper'}
+          className={styles.imageWrapper}
           data-dragging={dragging}
           onPointerDown={handlePointerDown}
           style={cssProps({ aspectRatio: `${width} / ${height}` })}
         >
           <div
             aria-atomic
-            className={'canvasWrapper'}
+            className={styles.canvasWrapper}
             aria-live="polite"
             aria-label={currentImageAlt}
             role="img"
           >
-            <canvas aria-hidden className={'canvas'} ref={canvas} />
+            <canvas aria-hidden className={styles.canvas} ref={canvas} />
           </div>
           {showPlaceholder && placeholder && (
             <img
               aria-hidden
-              className={'placeholder'}
+              className={styles.placeholder}
               data-loaded={loaded && !!textures}
               src={placeholder}
               ref={placeholderRef}
@@ -380,7 +380,7 @@ export const Carousel = ({ width, height, images, placeholder, ...rest }) => {
           )}
         </div>
         <button
-          className={'button'}
+          className={styles.button}
           data-prev={true}
           aria-label="Previous slide"
           onClick={() => navigate({ direction: -1 })}
@@ -388,7 +388,7 @@ export const Carousel = ({ width, height, images, placeholder, ...rest }) => {
           <ArrowLeft />
         </button>
         <button
-          className={'button'}
+          className={styles.button}
           data-next={true}
           aria-label="Next slide"
           onClick={() => navigate({ direction: 1 })}
@@ -396,10 +396,10 @@ export const Carousel = ({ width, height, images, placeholder, ...rest }) => {
           <ArrowRight />
         </button>
       </div>
-      <div className={'nav'}>
+      <div className={styles.nav}>
         {images.map((image, index) => (
           <button
-            className={'navButton'}
+            className={styles.navButton}
             key={image.alt}
             onClick={() => onNavClick(index)}
             aria-label={`Jump to slide ${index + 1}`}

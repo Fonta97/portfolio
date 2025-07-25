@@ -17,11 +17,11 @@ import { Profile } from './profile';
 import { ProjectSummary } from './project-summary';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
-
-
-
-
-
+import styles from './home.module.css';
+import introStyles from './intro.module.css';
+import profileStyles from './profile.module.css';
+import projectSummaryStyles from './project-summary.module.css';
+import displacementSphereStyles from './displacement-sphere.module.css';
 
 // Prefetch draco decoader wasm
 export const links = () => [
@@ -99,7 +99,7 @@ export const Home = () => {
   }, [visibleSections]);
 
   return (
-    <div className={'home'}>
+    <div className={styles.home}>
       <Intro
         id="intro"
         sectionRef={intro}

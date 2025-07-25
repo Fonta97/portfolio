@@ -7,7 +7,7 @@ import { DecoderText } from '~/components/decoder-text';
 import { Heading } from '~/components/heading';
 import { Text } from '~/components/text';
 import { Transition } from '~/components/transition';
-
+import styles from './error.module.css';
 import { Image } from '~/components/image';
 import flatlineSkull from './error-flatline.svg';
 
@@ -38,7 +38,7 @@ export function Error({ error }) {
   const { summary, message } = getMessage();
 
   return (
-    <section className={'page'}>
+    <section className={styles.page}>
       {flatlined && (
         <style
           dangerouslySetInnerHTML={{
@@ -58,11 +58,11 @@ export function Error({ error }) {
       <Transition in>
         {({ visible }) => (
           <>
-            <div className={'details'}>
-              <div className={'text'}>
+            <div className={styles.details}>
+              <div className={styles.text}>
                 {!flatlined && (
                   <Heading
-                    className={'title'}
+                    className={styles.title}
                     data-visible={visible}
                     level={0}
                     weight="bold"
@@ -72,7 +72,7 @@ export function Error({ error }) {
                 )}
                 {flatlined && (
                   <Heading
-                    className={'titleFlatline'}
+                    className={styles.titleFlatline}
                     data-visible={visible}
                     level={2}
                     as="h1"
@@ -86,7 +86,7 @@ export function Error({ error }) {
                 {!flatlined && (
                   <Heading
                     aria-hidden
-                    className={'subheading'}
+                    className={styles.subheading}
                     data-visible={visible}
                     as="h2"
                     level={4}
@@ -94,14 +94,14 @@ export function Error({ error }) {
                     <DecoderText text={summary} start={visible} delay={300} />
                   </Heading>
                 )}
-                <Text className={'description'} data-visible={visible} as="p">
+                <Text className={styles.description} data-visible={visible} as="p">
                   {message}
                 </Text>
                 {flatlined ? (
                   <Button
                     secondary
                     iconHoverShift
-                    className={'button'}
+                    className={styles.button}
                     data-visible={visible}
                     href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                     icon="chevron-right"
@@ -112,7 +112,7 @@ export function Error({ error }) {
                   <Button
                     secondary
                     iconHoverShift
-                    className={'button'}
+                    className={styles.button}
                     data-visible={visible}
                     href="/"
                     icon="chevron-right"
@@ -123,19 +123,19 @@ export function Error({ error }) {
               </div>
             </div>
 
-            <div className={'videoContainer'} data-visible={visible}>
+            <div className={styles.videoContainer} data-visible={visible}>
               <Image
                 reveal
                 cover
                 noPauseButton
                 delay={600}
-                className={'video'}
+                className={styles.video}
                 src={flatlined ? flatlineVideo : notFoundVideo}
                 placeholder={flatlined ? flatlinePoster : notFoundPoster}
               />
               {flatlined ? (
                 <a
-                  className={'credit'}
+                  className={styles.credit}
                   data-visible={visible}
                   href="https://www.imdb.com/title/tt0318871/"
                   target="_blank"
@@ -145,7 +145,7 @@ export function Error({ error }) {
                 </a>
               ) : (
                 <a
-                  className={'credit'}
+                  className={styles.credit}
                   data-visible={visible}
                   href="https://www.imdb.com/title/tt0110912/"
                   target="_blank"

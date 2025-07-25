@@ -3,7 +3,7 @@ import { useReducedMotion, useSpring } from 'framer-motion';
 import { memo, useEffect, useRef } from 'react';
 import { delay } from '~/utils/delay';
 import { classes } from '~/utils/style';
-
+import styles from './decoder-text.module.css';
 
 // prettier-ignore
 const glyphs = [
@@ -54,7 +54,7 @@ export const DecoderText = memo(
 
       const renderOutput = () => {
         const characterMap = output.current.map(item => {
-          return `<span class="${item.type}">${item.value}</span>`;
+          return `<span class="${styles[item.type]}">${item.value}</span>`;
         });
 
         containerInstance.innerHTML = characterMap.join('');
@@ -88,9 +88,9 @@ export const DecoderText = memo(
     }, [decoderSpring, reduceMotion, start, startDelay, text]);
 
     return (
-      <span className={classes('text', className)} {...rest}>
-        <VisuallyHidden className={'label'}>{text}</VisuallyHidden>
-        <span aria-hidden className={'content'} ref={container} />
+      <span className={classes(styles.text, className)} {...rest}>
+        <VisuallyHidden className={styles.label}>{text}</VisuallyHidden>
+        <span aria-hidden className={styles.content} ref={container} />
       </span>
     );
   }

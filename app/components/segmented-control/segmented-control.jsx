@@ -9,7 +9,7 @@ import {
   useState,
 } from 'react';
 import { cssProps } from '~/utils/style';
-
+import styles from './segmented-control.module.css';
 
 const SegmentedControlContext = createContext({});
 
@@ -68,7 +68,7 @@ export const SegmentedControl = ({
       value={{ optionRefs, currentIndex, onChange, registerOption, unRegisterOption }}
     >
       <div
-        className={'container'}
+        className={styles.container}
         role="radiogroup"
         tabIndex="0"
         aria-labelledby={labelId}
@@ -78,10 +78,10 @@ export const SegmentedControl = ({
         <VisuallyHidden as="label" id={labelId}>
           {label}
         </VisuallyHidden>
-        <div className={'options'}>
+        <div className={styles.options}>
           {!!indicator && (
             <div
-              className={'indicator'}
+              className={styles.indicator}
               data-last={currentIndex === optionRefs.current.length - 1}
               style={cssProps(indicator)}
             />
@@ -110,7 +110,7 @@ export const SegmentedControlOption = ({ children, ...props }) => {
 
   return (
     <button
-      className={'button'}
+      className={styles.button}
       tabIndex={isSelected ? 0 : -1}
       role="radio"
       aria-checked={isSelected}

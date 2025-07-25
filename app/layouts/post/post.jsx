@@ -11,7 +11,7 @@ import { useRef, useState, useEffect } from 'react';
 import { clamp } from '~/utils/clamp';
 import { formatDate } from '~/utils/date';
 import { cssProps, msToNum, numToMs } from '~/utils/style';
-
+import styles from './post.module.css';
 import { Link as RouterLink } from '@remix-run/react';
 
 export const Post = ({ children, title, date, banner, timecode }) => {
@@ -36,14 +36,14 @@ export const Post = ({ children, title, date, banner, timecode }) => {
   const placeholder = `${banner?.split('.')[0]}-placeholder.jpg`;
 
   return (
-    <article className={'post'}>
+    <article className={styles.post}>
       <Section>
         {banner && (
-          <div className={'banner'} ref={imageRef}>
-            <div className={'bannerImage'}>
+          <div className={styles.banner} ref={imageRef}>
+            <div className={styles.bannerImage}>
               <Image role="presentation" src={banner} placeholder={placeholder} alt="" />
             </div>
-            <div className={'bannerImageBlur'}>
+            <div className={styles.bannerImageBlur}>
               <Image
                 role="presentation"
                 src={placeholder}
@@ -53,23 +53,23 @@ export const Post = ({ children, title, date, banner, timecode }) => {
             </div>
           </div>
         )}
-        <header className={'header'}>
-          <div className={'headerText'}>
+        <header className={styles.header}>
+          <div className={styles.headerText}>
             <Transition in timeout={msToNum(tokens.base.durationM)}>
               {({ visible, nodeRef }) => (
-                <div className={'date'} ref={nodeRef}>
+                <div className={styles.date} ref={nodeRef}>
                   <Divider notchWidth="64px" notchHeight="8px" collapsed={!visible} />
-                  <Text className={'dateText'} data-visible={visible}>
+                  <Text className={styles.dateText} data-visible={visible}>
                     {dateTime}
                   </Text>
                 </div>
               )}
             </Transition>
-            <Heading level={2} as="h1" className={'title'} aria-label={title}>
+            <Heading level={2} as="h1" className={styles.title} aria-label={title}>
               {title.split(' ').map((word, index) => (
-                <span className={'titleWordWrapper'} key={`${word}-${index}`}>
+                <span className={styles.titleWordWrapper} key={`${word}-${index}`}>
                   <span
-                    className={'titleWord'}
+                    className={styles.titleWord}
                     style={cssProps({ delay: numToMs(index * 100 + 100) })}
                   >
                     {word}
@@ -78,10 +78,10 @@ export const Post = ({ children, title, date, banner, timecode }) => {
                 </span>
               ))}
             </Heading>
-            <div className={'details'}>
+            <div className={styles.details}>
               <RouterLink
                 to="#postContent"
-                className={'arrow'}
+                className={styles.arrow}
                 aria-label="Scroll to post content"
                 onClick={handleScrollIndicatorClick}
               >
@@ -95,13 +95,13 @@ export const Post = ({ children, title, date, banner, timecode }) => {
                   <path d="M1 1l20.5 12L42 1" strokeWidth="2" fill="none" />
                 </svg>
               </RouterLink>
-              <div className={'timecode'}>{timecode}</div>
+              <div className={styles.timecode}>{timecode}</div>
             </div>
           </div>
         </header>
       </Section>
-      <Section className={'wrapper'} id="postContent" tabIndex={-1}>
-        <Text as="div" size="l" className={'content'}>
+      <Section className={styles.wrapper} id="postContent" tabIndex={-1}>
+        <Text as="div" size="l" className={styles.content}>
           {children}
         </Text>
       </Section>

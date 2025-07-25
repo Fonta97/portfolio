@@ -4,7 +4,7 @@ import { Transition } from '~/components/transition';
 import { Link } from '@remix-run/react';
 import { forwardRef } from 'react';
 import { classes } from '~/utils/style';
-
+import styles from './button.module.css';
 
 function isExternalLink(href) {
   return href?.includes('://');
@@ -54,7 +54,7 @@ const ButtonContent = forwardRef(
 
     return (
       <Component
-        className={classes('button', className)}
+        className={classes(styles.button, className)}
         data-loading={loading}
         data-icon-only={iconOnly}
         data-secondary={secondary}
@@ -68,16 +68,16 @@ const ButtonContent = forwardRef(
       >
         {!!icon && (
           <Icon
-            className={'icon'}
+            className={styles.icon}
             data-start={!iconOnly}
             data-shift={iconHoverShift}
             icon={icon}
           />
         )}
-        {!!children && <span className={'text'}>{children}</span>}
+        {!!children && <span className={styles.text}>{children}</span>}
         {!!iconEnd && (
           <Icon
-            className={'icon'}
+            className={styles.icon}
             data-end={!iconOnly}
             data-shift={iconHoverShift}
             icon={iconEnd}
@@ -87,7 +87,7 @@ const ButtonContent = forwardRef(
           {({ visible, nodeRef }) => (
             <Loader
               ref={nodeRef}
-              className={'loader'}
+              className={styles.loader}
               size={32}
               text={loadingText}
               data-visible={visible}

@@ -16,7 +16,7 @@ import {
 import { Fragment, Suspense, lazy } from 'react';
 import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
-
+import styles from './volkihar-knight.module.css';
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -106,7 +106,7 @@ export function VolkiharKnight() {
         <ProjectSection>
           <ProjectSectionContent>
             <video
-              className={'video'}
+              className={styles.video}
               src={kaboom}
               poster={kaboomPlaceholder}
               autoPlay
@@ -137,13 +137,13 @@ export function VolkiharKnight() {
         {/* --- 3D Armor + networking text --- */}
         <ProjectSection>
           <ProjectSectionColumns>
-            <div className={'armor'}>
-              <Suspense fallback={<div className={'loader'} />}>
+            <div className={styles.armor}>
+              <Suspense fallback={<div className={styles.loader} />}>
                 <Armor alt="3D model of the Volkihar Knight armor" />
               </Suspense>
             </div>
 
-            <div className={'textSection'}>
+            <div className={styles.textSection}>
               <ProjectSectionHeading>Lot of networking all over the world</ProjectSectionHeading>
               <ProjectSectionText>
                 As an unapologetic extrovert, I’m constantly sparking conversations and collaborations with new people—online and offline—across every time zone.
@@ -158,7 +158,7 @@ export function VolkiharKnight() {
         {/* --- Sicily carousel --- */}
         <ProjectSection>
           <ProjectSectionContent>
-            <Suspense fallback={<div className={'loader'} />}>
+            <Suspense fallback={<div className={styles.loader} />}>
               <Carousel
                 placeholder={sicilyPlaceholder}
                 images={[

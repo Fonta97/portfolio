@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { classes, cssProps } from '~/utils/style';
-
+import styles from './text-area.module.css';
 
 export const TextArea = ({
   className,
@@ -46,7 +46,7 @@ export const TextArea = ({
 
   return (
     <textarea
-      className={classes('textarea', className)}
+      className={classes(styles.textarea, className)}
       ref={textareaRef}
       onChange={handleChange}
       style={cssProps({ resize })}

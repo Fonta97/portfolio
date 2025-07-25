@@ -1,19 +1,19 @@
+import styles from './table.module.css';
 
+export const Table = ({ children }) => <table className={styles.table}>{children}</table>;
 
-export const Table = ({ children }) => <table className={'table'}>{children}</table>;
-
-export const TableRow = ({ children }) => <tr className={'row'}>{children}</tr>;
+export const TableRow = ({ children }) => <tr className={styles.row}>{children}</tr>;
 
 export const TableHead = ({ children }) => (
-  <thead className={'head'}>{children}</thead>
+  <thead className={styles.head}>{children}</thead>
 );
 
 export const TableBody = ({ children }) => (
-  <tbody className={'body'}>{children}</tbody>
+  <tbody className={styles.body}>{children}</tbody>
 );
 
 export const TableHeadCell = ({ children }) => (
-  <th className={'headCell'}>{children}</th>
+  <th className={styles.headCell}>{children}</th>
 );
 
-export const TableCell = ({ children }) => <td className={'cell'}>{children}</td>;
+export const TableCell = ({ children }) => <td className={styles.cell}>{children}</td>;

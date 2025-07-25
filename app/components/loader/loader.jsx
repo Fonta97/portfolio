@@ -2,7 +2,7 @@ import { Text } from '~/components/text';
 import { useReducedMotion } from 'framer-motion';
 import { classes, cssProps } from '~/utils/style';
 import { forwardRef } from 'react';
-
+import styles from './loader.module.css';
 
 export const Loader = forwardRef(
   (
@@ -13,7 +13,7 @@ export const Loader = forwardRef(
 
     if (reduceMotion) {
       return (
-        <Text className={classes('text', className)} weight="medium" {...rest}>
+        <Text className={classes(styles.text, className)} weight="medium" {...rest}>
           {text}
         </Text>
       );
@@ -22,12 +22,12 @@ export const Loader = forwardRef(
     return (
       <div
         ref={ref}
-        className={classes('loader', className)}
+        className={classes(styles.loader, className)}
         data-center={center}
         style={cssProps({ width, height }, style)}
         {...rest}
       >
-        <div className={'span'} />
+        <div className={styles.span} />
       </div>
     );
   }

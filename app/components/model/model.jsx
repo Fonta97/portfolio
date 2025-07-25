@@ -39,7 +39,7 @@ import {
 } from '~/utils/three';
 import { ModelAnimationType } from './device-models';
 import { throttle } from '~/utils/throttle';
-
+import styles from './model.module.css';
 
 const MeshType = {
   Frame: 'Frame',
@@ -326,7 +326,7 @@ export const Model = ({
 
   return (
     <div
-      className={classes('model', className)}
+      className={classes(styles.model, className)}
       data-loaded={loaded}
       style={cssProps({ delay: numToMs(showDelay) }, style)}
       ref={container}
@@ -334,7 +334,7 @@ export const Model = ({
       aria-label={alt}
       {...rest}
     >
-      <canvas className={'canvas'} ref={canvas} />
+      <canvas className={styles.canvas} ref={canvas} />
       {models.map((model, index) => (
         <Device
           key={JSON.stringify(model.position)}

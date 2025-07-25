@@ -1,6 +1,6 @@
 import { forwardRef, useId } from 'react';
 import { classes } from '~/utils/style';
-
+import styles from './monogram.module.css';
 
 export const Monogram = forwardRef(({ highlight, className, ...props }, ref) => {
   const id = useId();
@@ -9,7 +9,7 @@ export const Monogram = forwardRef(({ highlight, className, ...props }, ref) => 
   return (
     <svg
       aria-hidden
-      className={classes('monogram', className)}
+      className={classes(styles.monogram, className)}
       width="48"  // Mantenere la stessa larghezza
       height="29" // Mantenere la stessa altezza
       viewBox="0 0 375 375" // Assicurati che il viewBox corrisponda alla dimensione dell'SVG nuovo
