@@ -14,6 +14,10 @@ import { createCookieSessionStorage, json } from "@remix-run/cloudflare";
 import { ThemeProvider, themeStyles } from "~/components/theme-provider";
 import GothamBook from "~/assets/fonts/gotham-book.woff2";
 import GothamMedium from "~/assets/fonts/gotham-medium.woff2";
+import navbarStyles from "~/layouts/navbar/navbar.module.css";
+import navToggleStyles from "~/layouts/navbar/nav-toggle.module.css";
+import themeToggleStyles from "~/layouts/navbar/theme-toggle.module.css";
+import progressStyles from "~/components/progress/progress.module.css";
 import { useEffect } from "react";
 import { Error } from "~/layouts/error";
 import { VisuallyHidden } from "~/components/visually-hidden";
@@ -48,6 +52,11 @@ export const links = () => [
   // Reset and global styles served from /public/styles
   { rel: "stylesheet", href: "/styles/reset.css" },
   { rel: "stylesheet", href: "/styles/global.css" },
+  { rel: "stylesheet", href: styles },
+  { rel: "stylesheet", href: navbarStyles },
+  { rel: "stylesheet", href: navToggleStyles },
+  { rel: "stylesheet", href: themeToggleStyles },
+  { rel: "stylesheet", href: progressStyles },
 ];
 
 export const loader = async ({ request, context }) => {
