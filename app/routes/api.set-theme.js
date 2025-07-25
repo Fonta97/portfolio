@@ -11,7 +11,8 @@ export async function action({ request, context }) {
       maxAge: 604_800,
       path: '/',
       sameSite: 'lax',
-      secrets: [context.cloudflare.env.SESSION_SECRET || ' '],
+      // fallback portfolio secret if none is configured
+      secrets: [context.cloudflare.env.SESSION_SECRET || '0b8fa0c6-79be-4aac-930a-6fc3ed208f8f'],
       secure: true,
     },
   });
