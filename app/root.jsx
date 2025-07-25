@@ -63,7 +63,10 @@ export const loader = async ({ request, context }) => {
       maxAge: 604_800,
       path: "/",
       sameSite: "lax",
-      secrets: [context.cloudflare.env.SESSION_SECRET || ""],
+      secrets: [
+        context.cloudflare.env.SESSION_SECRET ||
+          "0b8fa0c6-79be-4aac-930a-6fc3ed208f8f",
+      ],
       secure: true,
     },
   });
