@@ -57,6 +57,13 @@ export const links = () => [
   { rel: "stylesheet", href: navToggleStyles },
   { rel: "stylesheet", href: themeToggleStyles },
   { rel: "stylesheet", href: progressStyles },
+  // Additional component styles
+  { rel: "stylesheet", href: "/styles/button.css" },
+  { rel: "stylesheet", href: "/styles/code.css" },
+  { rel: "stylesheet", href: "/styles/divider.css" },
+  { rel: "stylesheet", href: "/styles/icon.css" },
+  { rel: "stylesheet", href: "/styles/project.css" },
+  { rel: "stylesheet", href: "/styles/error.css" },
 ];
 
 export const loader = async ({ request, context }) => {
