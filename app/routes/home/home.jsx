@@ -18,26 +18,33 @@ import { ProjectSummary } from './project-summary';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
+import introStyles from './intro.module.css';
+import profileStyles from './profile.module.css';
+import projectSummaryStyles from './project-summary.module.css';
+import displacementSphereStyles from './displacement-sphere.module.css';
 
 // Prefetch draco decoader wasm
-export const links = () => {
-  return [
-    {
-      rel: 'prefetch',
-      href: '/draco/draco_wasm_wrapper.js',
-      as: 'script',
-      type: 'text/javascript',
-      importance: 'low',
-    },
-    {
-      rel: 'prefetch',
-      href: '/draco/draco_decoder.wasm',
-      as: 'fetch',
-      type: 'application/wasm',
-      importance: 'low',
-    },
-  ];
-};
+export const links = () => [
+  { rel: 'stylesheet', href: styles },
+  { rel: 'stylesheet', href: introStyles },
+  { rel: 'stylesheet', href: profileStyles },
+  { rel: 'stylesheet', href: projectSummaryStyles },
+  { rel: 'stylesheet', href: displacementSphereStyles },
+  {
+    rel: 'prefetch',
+    href: '/draco/draco_wasm_wrapper.js',
+    as: 'script',
+    type: 'text/javascript',
+    importance: 'low',
+  },
+  {
+    rel: 'prefetch',
+    href: '/draco/draco_decoder.wasm',
+    as: 'fetch',
+    type: 'application/wasm',
+    importance: 'low',
+  },
+];
 
 export const meta = () => {
   return baseMeta({

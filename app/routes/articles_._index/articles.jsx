@@ -14,6 +14,8 @@ import { formatDate } from '~/utils/date';
 import { classes, cssProps } from '~/utils/style';
 import styles from './articles.module.css';
 
+export const links = () => [{ rel: 'stylesheet', href: styles }];
+
 function ArticlesPost({ slug, frontmatter, timecode, index }) {
   const [hovered, setHovered] = useState(false);
   const [dateTime, setDateTime] = useState(null);

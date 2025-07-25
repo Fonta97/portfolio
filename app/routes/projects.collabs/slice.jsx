@@ -40,6 +40,8 @@ import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import styles from './slice.module.css';
 
+export const links = () => [{ rel: 'stylesheet', href: styles }];
+
 const title = 'Partners I work with';
 const description =
   'In this section, you can see all of the main partners I work with such as Jeenka.';

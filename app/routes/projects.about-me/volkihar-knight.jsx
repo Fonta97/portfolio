@@ -18,6 +18,8 @@ import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import styles from './volkihar-knight.module.css';
 
+export const links = () => [{ rel: 'stylesheet', href: styles }];
+
 /* --- Assets -------------------------------------------------------------- */
 import Background1Large        from '~/assets/gamingpc.jpg';
 import Background1Placeholder  from '~/assets/gamingpc.jpg';
