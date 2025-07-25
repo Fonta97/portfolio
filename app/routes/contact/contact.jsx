@@ -15,6 +15,8 @@ import { cssProps, msToNum, numToMs } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import styles from './contact.module.css';
 
+export const links = () => [{ rel: 'stylesheet', href: styles }];
+
 export const meta = () => {
   return baseMeta({
     title: 'Contact',

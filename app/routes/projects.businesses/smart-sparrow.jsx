@@ -58,6 +58,8 @@ import { Suspense, lazy, useMemo } from 'react';
 import { media } from '~/utils/style';
 import styles from './smart-sparrow.module.css';
 
+export const links = () => [{ rel: 'stylesheet', href: styles }];
+
 const Earth = lazy(() => import('./earth').then(module => ({ default: module.Earth })));
 const EarthSection = lazy(() =>
   import('./earth').then(module => ({ default: module.EarthSection }))

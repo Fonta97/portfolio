@@ -17,6 +17,8 @@ import {
 import { baseMeta } from '~/utils/meta';
 import styles from './uses.module.css';
 
+export const links = () => [{ rel: 'stylesheet', href: styles }];
+
 export const meta = () => {
   return baseMeta({
     title: 'Uses',

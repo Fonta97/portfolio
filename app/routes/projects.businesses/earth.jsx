@@ -55,6 +55,8 @@ import {
 import { throttle } from '~/utils/throttle';
 import styles from './earth.module.css';
 
+export const links = () => [{ rel: 'stylesheet', href: styles }];
+
 const nullTarget = { x: 0, y: 0, z: 2 };
 
 const interpolatePosition = (value, nextValue, percent) =>

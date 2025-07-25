@@ -28,6 +28,8 @@ import { cleanRenderer, cleanScene, modelLoader, removeLights } from '~/utils/th
 import { throttle } from '~/utils/throttle';
 import styles from './armor.module.css';
 
+export const links = () => [{ rel: 'stylesheet', href: styles }];
+
 const rotationSpringConfig = {
   stiffness: 40,
   damping: 20,
