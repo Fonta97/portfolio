@@ -38,7 +38,7 @@ import {
 import { Fragment } from 'react';
 import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
-import styles from './slice.module.css';
+
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -54,7 +54,7 @@ export const meta = () => {
 export const Slice = () => {
   return (
     <Fragment>
-      <ProjectContainer className={styles.slice}>
+      <ProjectContainer className={'slice'}>
         <ProjectBackground
           src={em2cWebDescription}
           srcSet={`${em2cWebDescription} 1280w, ${em2cWebDescriptionLarge} 2560w`}
@@ -82,8 +82,8 @@ export const Slice = () => {
           </ProjectSectionContent>
         </ProjectSection>
         <ProjectSection>
-          <ProjectSectionColumns centered className={styles.columns}>
-            <div className={styles.imagesText}>
+          <ProjectSectionColumns centered className={'columns'}>
+            <div className={'imagesText'}>
               <ProjectSectionHeading>Freelance Dev for Jeenka. an International Partner</ProjectSectionHeading>
               <ProjectSectionText>
                 Jeenka is a one-stop shop digital solutions partner I've been collaborating with since 2025 on various projects.
@@ -92,9 +92,9 @@ export const Slice = () => {
                 We've helped many international clients bring their projects to life — from Laravel APIs to personalized WordPress sites with custom plugins, all designed to deliver the best possible UX and UI for the end user.
               </ProjectSectionText>
             </div>
-            <div className={styles.sidebarImages}>
+            <div className={'sidebarImages'}>
               <Image
-                className={styles.sidebarImage}
+                className={'sidebarImage'}
                 srcSet={`${jeenkaPlace2} 350w, ${jeenkaPlace2Large} 700w`}
                 width={350}
                 height={750}
@@ -103,7 +103,7 @@ export const Slice = () => {
                 sizes={`(max-width: ${media.mobile}px) 200px, 343px`}
               />
               <Image
-                className={styles.sidebarImage}
+                className={'sidebarImage'}
                 srcSet={`${jeenkaPlace} 350w, ${jeenkaPlaceLarge} 700w`}
                 width={350}
                 height={750}
@@ -133,9 +133,9 @@ export const Slice = () => {
           </ProjectSectionContent>
         </ProjectSection>
         <ProjectSection padding="top">
-          <ProjectSectionContent className={styles.grid}>
-            <div className={styles.gridImage}>
-              <div className={styles.gridBackground}>
+          <ProjectSectionContent className={'grid'}>
+            <div className={'gridImage'}>
+              <div className={'gridBackground'}>
                 <Image
                   srcSet={`${muuOccelli} 440w, ${muuOccelliLarge} 880w`}
                   width={440}
@@ -146,7 +146,7 @@ export const Slice = () => {
                   sizes={`(max-width: ${media.mobile}px) 312px, (max-width: ${media.tablet}px) 408px, 514px`}
                 />
               </div>
-              <div className={styles.gridForeground}>
+              <div className={'gridForeground'}>
                 <Image
                   srcSet={`${beppinoOccelli} 440w, ${beppinoOccelliLarge} 880w`}
                   width={440}
@@ -157,7 +157,7 @@ export const Slice = () => {
                 />
               </div>
             </div>
-            <div className={styles.gridText}>
+            <div className={'gridText'}>
               <ProjectSectionHeading>IT Intern at Beppino Occelli</ProjectSectionHeading>
               <ProjectSectionText>
                 I worked as an IT intern at Beppino Occelli, a major Italian dairy company with global reach. I helped develop their Shopify website and custom APIs for both e-commerce and their ERP system (C#, .NET, ASP.NET), also migrating legacy Access databases to SQL. It was a key experience that boosted my confidence in industrial tech environments.

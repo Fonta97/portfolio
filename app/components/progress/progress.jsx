@@ -1,6 +1,6 @@
 import { useNavigation } from '@remix-run/react';
 import { useRef, useEffect, useState } from 'react';
-import styles from './progress.module.css';
+
 
 export function Progress() {
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -48,7 +48,7 @@ export function Progress() {
 
   return (
     <div
-      className={styles.progress}
+      className={'progress'}
       data-status={state}
       data-visible={visible}
       data-complete={animationComplete}

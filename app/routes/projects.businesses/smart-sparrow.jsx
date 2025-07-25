@@ -56,7 +56,7 @@ import {
 import { baseMeta } from '~/utils/meta';
 import { Suspense, lazy, useMemo } from 'react';
 import { media } from '~/utils/style';
-import styles from './smart-sparrow.module.css';
+
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -137,7 +137,7 @@ export const SmartSparrow = () => {
           <ProjectSectionContent>
             <Image
                 raised
-                className={styles.video}
+                className={'video'}
                 srcSet={`${videoDoubleEffe} 1280w, ${videoDoubleEffeLarge} 2560w`}
                 width={1280}
                 height={800}
@@ -215,7 +215,7 @@ export const SmartSparrow = () => {
               </ProjectSectionContent>
               <Image
                 raised
-                className={styles.video}
+                className={'video'}
                 srcSet={`${fedevideo} 1280w, ${fedevideoLarge} 2560w`}
                 width={1280}
                 height={800}
@@ -236,7 +236,7 @@ export const SmartSparrow = () => {
             </ProjectTextRow>
              <Image
                 raised
-                className={styles.video}
+                className={'video'}
                 srcSet={`${inagenda} 1280w, ${inagendaLarge} 2560w`}
                 width={1280}
                 height={800}
@@ -258,9 +258,9 @@ export const SmartSparrow = () => {
                 </ProjectSectionText>
               </ProjectTextRow>
             </ProjectSectionContent>
-            <div className={styles.sidebarImages}>
+            <div className={'sidebarImages'}>
               <Image
-                className={styles.sidebarImage}
+                className={'sidebarImage'}
                 srcSet={
                   isDark
                     ? `${languageDark} 260w, ${languageDarkLarge} 520w`
@@ -277,7 +277,7 @@ export const SmartSparrow = () => {
                 sizes={`(max-width: ${media.mobile}px) 50vw, 25vw`}
               />
               <Image
-                className={styles.sidebarImage}
+                className={'sidebarImage'}
                 srcSet={
                   isDark
                     ? `${languagemobileDark} 260w, ${languagemobileDarkLarge} 520w`
@@ -299,7 +299,7 @@ export const SmartSparrow = () => {
         <ThemeProvider theme="dark" data-invert>
           <Suspense>
             <Earth
-              className={styles.earth}
+              className={'earth'}
               hideMeshes={useMemo(
                 () => ['Atmosphere', 'EarthPartial', 'Chunk', 'EarthFull'],
                 []

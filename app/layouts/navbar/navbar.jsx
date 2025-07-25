@@ -11,7 +11,7 @@ import { NavToggle } from './nav-toggle';
 import { ThemeToggle } from './theme-toggle';
 import { navLinks, socialLinks } from './nav-data';
 import config from '~/config.json';
-import styles from './navbar.module.css';
+
 
 export const Navbar = () => {
   const [current, setCurrent] = useState();
@@ -140,21 +140,21 @@ export const Navbar = () => {
   };
 
   return (
-    <header className={styles.navbar} ref={headerRef}>
+    <header className={'navbar'} ref={headerRef}>
       <RouterLink
         unstable_viewTransition
         prefetch="intent"
         to={location.pathname === '/' ? '/#intro' : '/'}
         data-navbar-item
-        className={styles.logo}
+        className={'logo'}
         aria-label={`${config.name}, ${config.role}`}
         onClick={handleMobileNavClick}
       >
         <Monogram highlight />
       </RouterLink>
       <NavToggle onClick={() => setMenuOpen(!menuOpen)} menuOpen={menuOpen} />
-      <nav className={styles.nav}>
-        <div className={styles.navList}>
+      <nav className={'nav'}>
+        <div className={'navList'}>
           {navLinks.map(({ label, pathname }) => (
             <RouterLink
               unstable_viewTransition
@@ -162,7 +162,7 @@ export const Navbar = () => {
               to={pathname}
               key={label}
               data-navbar-item
-              className={styles.navLink}
+              className={'navLink'}
               aria-current={getCurrent(pathname)}
               onClick={handleNavItemClick}
             >
@@ -174,14 +174,14 @@ export const Navbar = () => {
       </nav>
       <Transition unmount in={menuOpen} timeout={msToNum(tokens.base.durationL)}>
         {({ visible, nodeRef }) => (
-          <nav className={styles.mobileNav} data-visible={visible} ref={nodeRef}>
+          <nav className={'mobileNav'} data-visible={visible} ref={nodeRef}>
             {navLinks.map(({ label, pathname }, index) => (
               <RouterLink
                 unstable_viewTransition
                 prefetch="intent"
                 to={pathname}
                 key={label}
-                className={styles.mobileNavLink}
+                className={'mobileNavLink'}
                 data-visible={visible}
                 aria-current={getCurrent(pathname)}
                 onClick={handleMobileNavClick}
@@ -205,18 +205,18 @@ export const Navbar = () => {
 };
 
 const NavbarIcons = ({ desktop }) => (
-  <div className={styles.navIcons}>
+  <div className={'navIcons'}>
     {socialLinks.map(({ label, url, icon }) => (
       <a
         key={label}
         data-navbar-item={desktop || undefined}
-        className={styles.navIconLink}
+        className={'navIconLink'}
         aria-label={label}
         href={url}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon className={styles.navIcon} icon={icon} />
+        <Icon className={'navIcon'} icon={icon} />
       </a>
     ))}
   </div>

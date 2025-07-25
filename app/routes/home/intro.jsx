@@ -11,7 +11,7 @@ import { Suspense, lazy, useEffect, useState } from 'react';
 import { cssProps } from '~/utils/style';
 import config from '~/config.json';
 import { useHydrated } from '~/hooks/useHydrated';
-import styles from './intro.module.css';
+
 
 const DisplacementSphere = lazy(() =>
   import('./displacement-sphere').then(module => ({ default: module.DisplacementSphere }))
@@ -52,7 +52,7 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
 
   return (
     <Section
-      className={styles.intro}
+      className={'intro'}
       as="section"
       ref={sectionRef}
       id={id}
@@ -68,25 +68,25 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                 <DisplacementSphere />
               </Suspense>
             )}
-            <header className={styles.text}>
-              <h1 className={styles.name} data-visible={visible} id={titleId}>
+            <header className={'text'}>
+              <h1 className={'name'} data-visible={visible} id={titleId}>
                 <DecoderText text={config.name} delay={500} />
               </h1>
-              <Heading level={0} as="h2" className={styles.title}>
-                <VisuallyHidden className={styles.label}>
+              <Heading level={0} as="h2" className={'title'}>
+                <VisuallyHidden className={'label'}>
                   {`${config.role} + ${introLabel}`}
                 </VisuallyHidden>
-                <span aria-hidden className={styles.row}>
+                <span aria-hidden className={'row'}>
                   <span
-                    className={styles.word}
+                    className={'word'}
                     data-status={status}
                     style={cssProps({ delay: tokens.base.durationXS })}
                   >
                     {config.role}
                   </span>
-                  <span className={styles.line} data-status={status} />
+                  <span className={'line'} data-status={status} />
                 </span>
-                <div className={styles.row}>
+                <div className={'row'}>
                   {disciplines.map(item => (
                     <Transition
                       unmount
@@ -98,7 +98,7 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                         <span
                           aria-hidden
                           ref={nodeRef}
-                          className={styles.word}
+                          className={'word'}
                           data-plus={true}
                           data-status={status}
                           style={cssProps({ delay: tokens.base.durationL })}
@@ -113,7 +113,7 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
             </header>
             <RouterLink
               to="/#project-1"
-              className={styles.scrollIndicator}
+              className={'scrollIndicator'}
               data-status={status}
               data-hidden={scrollIndicatorHidden}
               onClick={handleScrollClick}
@@ -122,7 +122,7 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
             </RouterLink>
             <RouterLink
               to="/#project-1"
-              className={styles.mobileScrollIndicator}
+              className={'mobileScrollIndicator'}
               data-status={status}
               data-hidden={scrollIndicatorHidden}
               onClick={handleScrollClick}

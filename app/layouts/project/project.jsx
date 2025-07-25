@@ -8,7 +8,7 @@ import { Transition } from '~/components/transition';
 import { useParallax } from '~/hooks';
 import { forwardRef, useRef } from 'react';
 import { classes, cssProps, msToNum, numToMs } from '~/utils/style';
-import styles from './project.module.css';
+
 
 const initDelay = 300;
 
@@ -21,23 +21,23 @@ export function ProjectHeader({
   className,
 }) {
   return (
-    <Section className={classes(styles.header, className)} as="section">
+    <Section className={classes('header', className)} as="section">
       <div
-        className={styles.headerContent}
+        className={'headerContent'}
         style={cssProps({ initDelay: numToMs(initDelay) })}
       >
-        <div className={styles.details}>
-          <Heading className={styles.title} level={2} as="h1">
+        <div className={'details'}>
+          <Heading className={'title'} level={2} as="h1">
             {title}
           </Heading>
-          <Text className={styles.description} size="xl" as="p">
+          <Text className={'description'} size="xl" as="p">
             {description}
           </Text>
           {!!url && (
             <Button
               secondary
               iconHoverShift
-              className={styles.linkButton}
+              className={'linkButton'}
               icon="chevron-right"
               href={url}
             >
@@ -46,10 +46,10 @@ export function ProjectHeader({
           )}
         </div>
         {!!roles?.length && (
-          <ul className={styles.meta}>
+          <ul className={'meta'}>
             {roles?.map((role, index) => (
               <li
-                className={styles.metaItem}
+                className={'metaItem'}
                 style={cssProps({ delay: numToMs(initDelay + 300 + index * 140) })}
                 key={role}
               >
@@ -64,7 +64,7 @@ export function ProjectHeader({
 }
 
 export const ProjectContainer = ({ className, ...rest }) => (
-  <article className={classes(styles.project, className)} {...rest} />
+  <article className={classes('project', className)} {...rest} />
 );
 
 export const ProjectSection = forwardRef(
@@ -82,7 +82,7 @@ export const ProjectSection = forwardRef(
     ref
   ) => (
     <section
-      className={classes(styles.section, className)}
+      className={classes('section', className)}
       data-light={light}
       data-full-height={fullHeight}
       ref={ref}
@@ -90,13 +90,13 @@ export const ProjectSection = forwardRef(
     >
       {!!backgroundElement && (
         <div
-          className={styles.sectionBackground}
+          className={'sectionBackground'}
           style={cssProps({ opacity: backgroundOverlayOpacity })}
         >
           {backgroundElement}
         </div>
       )}
-      <Section className={styles.sectionInner} data-padding={padding}>
+      <Section className={'sectionInner'} data-padding={padding}>
         {children}
       </Section>
     </section>
@@ -115,14 +115,14 @@ export const ProjectBackground = ({ opacity = 0.7, className, ...rest }) => {
     <Transition in timeout={msToNum(tokens.base.durationM)}>
       {({ visible, nodeRef }) => (
         <div
-          className={classes(styles.backgroundImage, className)}
+          className={classes('backgroundImage', className)}
           data-visible={visible}
           ref={nodeRef}
         >
-          <div className={styles.backgroundImageElement} ref={imageRef}>
+          <div className={'backgroundImageElement'} ref={imageRef}>
             <Image cover alt="" role="presentation" {...rest} />
           </div>
-          <div className={styles.backgroundScrim} style={cssProps({ opacity })} />
+          <div className={'backgroundScrim'} style={cssProps({ opacity })} />
         </div>
       )}
     </Transition>
@@ -130,14 +130,14 @@ export const ProjectBackground = ({ opacity = 0.7, className, ...rest }) => {
 };
 
 export const ProjectImage = ({ className, alt, ...rest }) => (
-  <div className={classes(styles.image, className)}>
+  <div className={classes('image', className)}>
     <Image reveal alt={alt} delay={300} {...rest} />
   </div>
 );
 
 export const ProjectSectionContent = ({ className, width = 'l', ...rest }) => (
   <div
-    className={classes(styles.sectionContent, className)}
+    className={classes('sectionContent', className)}
     data-width={width}
     {...rest}
   />
@@ -145,7 +145,7 @@ export const ProjectSectionContent = ({ className, width = 'l', ...rest }) => (
 
 export const ProjectSectionHeading = ({ className, level = 3, as = 'h2', ...rest }) => (
   <Heading
-    className={classes(styles.sectionHeading, className)}
+    className={classes('sectionHeading', className)}
     as={as}
     level={level}
     align="auto"
@@ -154,7 +154,7 @@ export const ProjectSectionHeading = ({ className, level = 3, as = 'h2', ...rest
 );
 
 export const ProjectSectionText = ({ className, ...rest }) => (
-  <Text className={classes(styles.sectionText, className)} size="l" as="p" {...rest} />
+  <Text className={classes('sectionText', className)} size="l" as="p" {...rest} />
 );
 
 export const ProjectTextRow = ({
@@ -168,7 +168,7 @@ export const ProjectTextRow = ({
   ...rest
 }) => (
   <div
-    className={classes(styles.textRow, className)}
+    className={classes('textRow', className)}
     data-center={center}
     data-stretch={stretch}
     data-center-mobile={centerMobile}
@@ -181,7 +181,7 @@ export const ProjectTextRow = ({
 
 export const ProjectSectionColumns = ({ className, centered, ...rest }) => (
   <ProjectSectionContent
-    className={classes(styles.sectionColumns, className)}
+    className={classes('sectionColumns', className)}
     data-centered={centered}
     {...rest}
   />

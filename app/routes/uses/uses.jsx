@@ -15,7 +15,7 @@ import {
   ProjectTextRow,
 } from '~/layouts/project';
 import { baseMeta } from '~/utils/meta';
-import styles from './uses.module.css';
+
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -29,7 +29,7 @@ export const meta = () => {
 export const Uses = () => {
   return (
     <>
-      <ProjectContainer className={styles.uses}>
+      <ProjectContainer className={'uses'}>
         <ProjectBackground
           src={usesBackground}
           placeholder={usesBackgroundPlaceholder}
@@ -39,7 +39,7 @@ export const Uses = () => {
           title="Uses"
           description="A somewhat comprehensive list of tools, apps, hardware, and more that I use on a daily basis to design and code things. And yeah, that is Hackerman from Kung Fury (2015) on the background."
         />
-        <ProjectSection padding="none" className={styles.section}>
+        <ProjectSection padding="none" className={'section'}>
           <ProjectSectionContent>
             <ProjectTextRow width="m">
               <ProjectSectionHeading>Design</ProjectSectionHeading>
@@ -62,7 +62,7 @@ export const Uses = () => {
             </ProjectTextRow>
           </ProjectSectionContent>
         </ProjectSection>
-        <ProjectSection padding="none" className={styles.section}>
+        <ProjectSection padding="none" className={'section'}>
           <ProjectSectionContent>
             <ProjectTextRow width="m">
               <ProjectSectionHeading>Development</ProjectSectionHeading>
@@ -100,7 +100,7 @@ export const Uses = () => {
             </ProjectTextRow>
           </ProjectSectionContent>
         </ProjectSection>
-        <ProjectSection padding="none" className={styles.section}>
+        <ProjectSection padding="none" className={'section'}>
           <ProjectSectionContent>
             <ProjectTextRow stretch width="m">
               <ProjectSectionHeading>System</ProjectSectionHeading>

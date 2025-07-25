@@ -14,17 +14,13 @@ import { createCookieSessionStorage, json } from "@remix-run/cloudflare";
 import { ThemeProvider, themeStyles } from "~/components/theme-provider";
 import GothamBook from "~/assets/fonts/gotham-book.woff2";
 import GothamMedium from "~/assets/fonts/gotham-medium.woff2";
-import navbarStyles from "~/layouts/navbar/navbar.module.css";
-import navToggleStyles from "~/layouts/navbar/nav-toggle.module.css";
-import themeToggleStyles from "~/layouts/navbar/theme-toggle.module.css";
-import progressStyles from "~/components/progress/progress.module.css";
 import { useEffect } from "react";
 import { Error } from "~/layouts/error";
 import { VisuallyHidden } from "~/components/visually-hidden";
 import { Navbar } from "~/layouts/navbar";
 import { Progress } from "~/components/progress";
 import config from "~/config.json";
-import styles from "./root.module.css";
+
 
 export const links = () => [
   // Preload your fonts
@@ -52,11 +48,11 @@ export const links = () => [
   // Reset and global styles served from /public/styles
   { rel: "stylesheet", href: "/styles/reset.css" },
   { rel: "stylesheet", href: "/styles/global.css" },
-  { rel: "stylesheet", href: styles },
-  { rel: "stylesheet", href: navbarStyles },
-  { rel: "stylesheet", href: navToggleStyles },
-  { rel: "stylesheet", href: themeToggleStyles },
-  { rel: "stylesheet", href: progressStyles },
+  { rel: "stylesheet", href: "/styles/root.css" },
+  { rel: "stylesheet", href: "/styles/navbar.css" },
+  { rel: "stylesheet", href: "/styles/nav-toggle.css" },
+  { rel: "stylesheet", href: "/styles/theme-toggle.css" },
+  { rel: "stylesheet", href: "/styles/progress.css" },
   // Additional component styles
   { rel: "stylesheet", href: "/styles/button.css" },
   { rel: "stylesheet", href: "/styles/code.css" },
@@ -64,6 +60,38 @@ export const links = () => [
   { rel: "stylesheet", href: "/styles/icon.css" },
   { rel: "stylesheet", href: "/styles/project.css" },
   { rel: "stylesheet", href: "/styles/error.css" },
+  { rel: "stylesheet", href: "/styles/armor.css" },
+  { rel: "stylesheet", href: "/styles/articles.css" },
+  { rel: "stylesheet", href: "/styles/carousel.css" },
+  { rel: "stylesheet", href: "/styles/contact.css" },
+  { rel: "stylesheet", href: "/styles/decoder-text.css" },
+  { rel: "stylesheet", href: "/styles/displacement-sphere.css" },
+  { rel: "stylesheet", href: "/styles/earth.css" },
+  { rel: "stylesheet", href: "/styles/footer.css" },
+  { rel: "stylesheet", href: "/styles/heading.css" },
+  { rel: "stylesheet", href: "/styles/home.css" },
+  { rel: "stylesheet", href: "/styles/image.css" },
+  { rel: "stylesheet", href: "/styles/input.css" },
+  { rel: "stylesheet", href: "/styles/intro.css" },
+  { rel: "stylesheet", href: "/styles/link.css" },
+  { rel: "stylesheet", href: "/styles/list.css" },
+  { rel: "stylesheet", href: "/styles/loader.css" },
+  { rel: "stylesheet", href: "/styles/model.css" },
+  { rel: "stylesheet", href: "/styles/monogram.css" },
+  { rel: "stylesheet", href: "/styles/post.css" },
+  { rel: "stylesheet", href: "/styles/post-markdown.css" },
+  { rel: "stylesheet", href: "/styles/profile.css" },
+  { rel: "stylesheet", href: "/styles/project-summary.css" },
+  { rel: "stylesheet", href: "/styles/section.css" },
+  { rel: "stylesheet", href: "/styles/segmented-control.css" },
+  { rel: "stylesheet", href: "/styles/slice.css" },
+  { rel: "stylesheet", href: "/styles/smart-sparrow.css" },
+  { rel: "stylesheet", href: "/styles/table.css" },
+  { rel: "stylesheet", href: "/styles/text.css" },
+  { rel: "stylesheet", href: "/styles/text-area.css" },
+  { rel: "stylesheet", href: "/styles/uses.css" },
+  { rel: "stylesheet", href: "/styles/visually-hidden.css" },
+  { rel: "stylesheet", href: "/styles/volkihar-knight.css" },
 ];
 
 export const loader = async ({ request, context }) => {
@@ -142,10 +170,10 @@ export default function App() {
       <body data-theme={theme}>
         <ThemeProvider theme={theme} toggleTheme={toggleTheme}>
           <Progress />
-          <VisuallyHidden
+        <VisuallyHidden
             showOnFocus
             as="a"
-            className={styles.skip}
+            className="skip"
             href="#main-content"
           >
             Skip to main content
@@ -153,7 +181,7 @@ export default function App() {
           <Navbar />
           <main
             id="main-content"
-            className={styles.container}
+            className="container"
             tabIndex={-1}
             data-loading={state === "loading"}
           >

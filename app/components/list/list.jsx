@@ -1,11 +1,11 @@
 import { classes } from '~/utils/style';
-import styles from './list.module.css';
+
 
 export const List = ({ ordered, children, className, ...rest }) => {
   const Element = ordered ? 'ol' : 'ul';
 
   return (
-    <Element className={classes(styles.list, className)} {...rest}>
+    <Element className={classes('list', className)} {...rest}>
       {children}
     </Element>
   );
@@ -13,7 +13,7 @@ export const List = ({ ordered, children, className, ...rest }) => {
 
 export const ListItem = ({ children, ...rest }) => {
   return (
-    <li className={styles.item} {...rest}>
+    <li className={'item'} {...rest}>
       {children}
     </li>
   );

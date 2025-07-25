@@ -4,7 +4,7 @@ import { Text } from '~/components/text';
 import { useTheme } from '~/components/theme-provider';
 import { Transition } from '~/components/transition';
 import { useRef, useState } from 'react';
-import styles from './code.module.css';
+
 
 export const Code = props => {
   const [copied, setCopied] = useState(false);
@@ -25,16 +25,16 @@ export const Code = props => {
   };
 
   return (
-    <div className={styles.code} data-theme={theme}>
+    <div className={'code'} data-theme={theme}>
       {!!lang && (
-        <Text secondary size="s" className={styles.lang}>
+        <Text secondary size="s" className={'lang'}>
           {lang}
         </Text>
       )}
       <pre ref={elementRef} {...props} />
-      <div className={styles.actions}>
+      <div className={'actions'}>
         <Button iconOnly onClick={handleCopy} aria-label="Copy">
-          <span className={styles.copyIcon}>
+          <span className={'copyIcon'}>
             <Transition in={!copied}>
               {({ visible, nodeRef }) => (
                 <Icon ref={nodeRef} icon="copy" data-visible={visible} />

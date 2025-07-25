@@ -12,7 +12,7 @@ import { Link as RouterLink, useLoaderData } from '@remix-run/react';
 import { useState, useEffect } from 'react';
 import { formatDate } from '~/utils/date';
 import { classes, cssProps } from '~/utils/style';
-import styles from './articles.module.css';
+
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -36,17 +36,17 @@ function ArticlesPost({ slug, frontmatter, timecode, index }) {
 
   return (
     <article
-      className={styles.post}
+      className={'post'}
       data-featured={!!featured}
       style={index !== undefined ? cssProps({ delay: index * 100 + 200 }) : undefined}
     >
       {featured && (
-        <Text className={styles.postLabel} size="s">
+        <Text className={'postLabel'} size="s">
           Featured
         </Text>
       )}
       {featured && !!banner && (
-        <div className={styles.postImage}>
+        <div className={'postImage'}>
           <Image
             noPauseButton
             play={!reduceMotion ? hovered : undefined}
@@ -61,12 +61,12 @@ function ArticlesPost({ slug, frontmatter, timecode, index }) {
         unstable_viewTransition
         prefetch="intent"
         to={`/articles/${slug}`}
-        className={styles.postLink}
+        className={'postLink'}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div className={styles.postDetails}>
-          <div aria-hidden className={styles.postDate}>
+        <div className={'postDetails'}>
+          <div aria-hidden className={'postDate'}>
             <Divider notchWidth="64px" notchHeight="8px" />
             {dateTime}
           </div>
@@ -76,18 +76,18 @@ function ArticlesPost({ slug, frontmatter, timecode, index }) {
           <Text size={featured ? 'l' : 's'} as="p">
             {abstract}
           </Text>
-          <div className={styles.postFooter}>
+          <div className={'postFooter'}>
             <Button secondary iconHoverShift icon="chevron-right" as="div">
               Read article
             </Button>
-            <Text className={styles.timecode} size="s">
+            <Text className={'timecode'} size="s">
               {timecode}
             </Text>
           </div>
         </div>
       </RouterLink>
       {featured && (
-        <Text aria-hidden className={styles.postTag} size="s">
+        <Text aria-hidden className={'postTag'} size="s">
           477
         </Text>
       )}
@@ -99,33 +99,33 @@ function SkeletonPost({ index }) {
   return (
     <article
       aria-hidden="true"
-      className={classes(styles.post, styles.skeleton)}
+      className={classes('post', 'skeleton')}
       data-featured="false"
       style={index !== undefined ? cssProps({ delay: index * 100 + 200 }) : undefined}
     >
-      <div className={styles.postLink}>
-        <div className={styles.postDetails}>
-          <div aria-hidden className={styles.postDate}>
+      <div className={'postLink'}>
+        <div className={'postDetails'}>
+          <div aria-hidden className={'postDate'}>
             <Divider notchWidth="64px" notchHeight="8px" />
             Coming soon...
           </div>
           <Heading
-            className={styles.skeletonBone}
+            className={'skeletonBone'}
             as="h2"
             level={4}
             style={{ height: 24, width: '70%' }}
           />
           <Text
-            className={styles.skeletonBone}
+            className={'skeletonBone'}
             size="s"
             as="p"
             style={{ height: 90, width: '100%' }}
           />
-          <div className={styles.postFooter}>
+          <div className={'postFooter'}>
             <Button secondary iconHoverShift icon="chevron-right" as="div">
               Read more
             </Button>
-            <Text className={styles.timecode} size="s">
+            <Text className={'timecode'} size="s">
               00:00:00:00
             </Text>
           </div>
@@ -142,16 +142,16 @@ export function Articles() {
   const isSingleColumn = width <= singleColumnWidth;
 
   const postsHeader = (
-    <header className={styles.header}>
-      <Heading className={styles.heading} level={5} as="h1">
+    <header className={'header'}>
+      <Heading className={'heading'} level={5} as="h1">
         <DecoderText text="Latest articles" />
       </Heading>
-      <Barcode className={styles.barcode} />
+      <Barcode className={'barcode'} />
     </header>
   );
 
   const postList = (
-    <div className={styles.list}>
+    <div className={'list'}>
       {!isSingleColumn && postsHeader}
       {posts.map(({ slug, ...post }, index) => (
         <ArticlesPost key={slug} slug={slug} index={index} {...post} />
@@ -167,16 +167,16 @@ export function Articles() {
   const featuredPost = <ArticlesPost {...featured} />;
 
   return (
-    <article className={styles.articles}>
-      <Section className={styles.content}>
+    <article className={'articles'}>
+      <Section className={'content'}>
         {!isSingleColumn && (
-          <div className={styles.grid}>
+          <div className={'grid'}>
             {postList}
             {featuredPost}
           </div>
         )}
         {isSingleColumn && (
-          <div className={styles.grid}>
+          <div className={'grid'}>
             {postsHeader}
             {featuredPost}
             {postList}

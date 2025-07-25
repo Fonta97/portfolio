@@ -1,5 +1,5 @@
 import { classes } from '~/utils/style';
-import styles from './text.module.css';
+
 
 export const Text = ({
   children,
@@ -13,7 +13,7 @@ export const Text = ({
 }) => {
   return (
     <Component
-      className={classes(styles.text, className)}
+      className={classes('text', className)}
       data-align={align}
       data-size={size}
       data-weight={weight}

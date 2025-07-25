@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { Link as RouterLink } from '@remix-run/react';
 import { classes } from '~/utils/style';
-import styles from './link.module.css';
+
 
 // File extensions that can be linked to
 const VALID_EXT = ['txt', 'png', 'jpg'];
@@ -18,7 +18,7 @@ export const Link = forwardRef(
     const targetValue = target || (isExternal ? '_blank' : undefined);
 
     const linkProps = {
-      className: classes(styles.link, className),
+      className: classes('link', className),
       ['data-secondary']: secondary,
       rel: relValue,
       href: href,

@@ -13,7 +13,7 @@ import { useFormInput } from '~/hooks';
 import { useLocation } from '@remix-run/react';
 import { cssProps, msToNum, numToMs } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
-import styles from './contact.module.css';
+
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -36,13 +36,13 @@ export const Contact = () => {
   const initDelay = tokens.base.durationS;
 
   return (
-    <Section className={styles.contact}>
+    <Section className={'contact'}>
       {/* ---------- FORM ---------- */}
       <Transition unmount in={!success} timeout={1600}>
         {({ status, nodeRef }) => (
           <form
             ref={nodeRef}
-            className={styles.form}
+            className={'form'}
             method="POST"
             action="https://formsubmit.co/4941066d45d07321c5aee2ddfe95614b"
             noValidate            
@@ -58,20 +58,20 @@ export const Contact = () => {
             />
 
             {/* Honeypot anti-bot */}
-            <Input className={styles.botkiller} label="Name" name="name" />
+            <Input className={'botkiller'} label="Name" name="name" />
 
             {/* Heading */}
             <Heading
               level={3}
               as="h1"
-              className={styles.title}
+              className={'title'}
               data-status={status}
               style={getDelay(tokens.base.durationXS, initDelay, 0.3)}
             >
               <DecoderText text="Say hello" start={status !== 'exited'} delay={300} />
             </Heading>
             <Divider
-              className={styles.divider}
+              className={'divider'}
               data-status={status}
               style={getDelay(tokens.base.durationXS, initDelay, 0.4)}
             />
@@ -79,7 +79,7 @@ export const Contact = () => {
             {/* Email */}
             <Input
               required
-              className={styles.input}
+              className={'input'}
               data-status={status}
               style={getDelay(tokens.base.durationXS, initDelay)}
               autoComplete="email"
@@ -94,7 +94,7 @@ export const Contact = () => {
             <Input
               required
               multiline
-              className={styles.input}
+              className={'input'}
               data-status={status}
               style={getDelay(tokens.base.durationS, initDelay)}
               autoComplete="off"
@@ -106,7 +106,7 @@ export const Contact = () => {
 
             {/* Submit */}
             <Button
-              className={styles.button}
+              className={'button'}
               data-status={status}
               style={getDelay(tokens.base.durationM, initDelay)}
               icon="send"
@@ -121,14 +121,14 @@ export const Contact = () => {
       {/* ---------- SUCCESS STATE ---------- */}
       <Transition unmount in={success}>
         {({ status, nodeRef }) => (
-          <div className={styles.complete} aria-live="polite" ref={nodeRef}>
-            <Heading level={3} as="h3" className={styles.completeTitle} data-status={status}>
+          <div className={'complete'} aria-live="polite" ref={nodeRef}>
+            <Heading level={3} as="h3" className={'completeTitle'} data-status={status}>
               Message Sent
             </Heading>
             <Text
               size="l"
               as="p"
-              className={styles.completeText}
+              className={'completeText'}
               data-status={status}
               style={getDelay(tokens.base.durationXS)}
             >
@@ -137,7 +137,7 @@ export const Contact = () => {
             <Button
               secondary
               iconHoverShift
-              className={styles.completeButton}
+              className={'completeButton'}
               data-status={status}
               style={getDelay(tokens.base.durationM)}
               href="/"
@@ -149,7 +149,7 @@ export const Contact = () => {
         )}
       </Transition>
 
-      <Footer className={styles.footer} />
+      <Footer className={'footer'} />
     </Section>
   );
 };

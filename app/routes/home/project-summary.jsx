@@ -11,7 +11,7 @@ import { Loader } from '~/components/loader';
 import { useWindowSize } from '~/hooks';
 import { cssProps, media } from '~/utils/style';
 import { useHydrated } from '~/hooks/useHydrated';
-import styles from './project-summary.module.css';
+
 
 /* SVG assets */
 import businessesSvg from '~/assets/businesses.svg';
@@ -66,7 +66,7 @@ export function ProjectSummary({
         src={src}
         alt=""
         aria-hidden="true"
-        className={styles.svg}
+        className={'svg'}
         data-device={device}
         data-visible={visible && modelLoaded}
         style={cssProps({ opacity: svgOpacity })}
@@ -76,20 +76,20 @@ export function ProjectSummary({
 
   function renderDetails(visible) {
     return (
-      <div className={styles.details}>
-        <div aria-hidden className={styles.index}>
+      <div className={'details'}>
+        <div aria-hidden className={'index'}>
           <Divider notchWidth="64px" notchHeight="8px" collapsed={!visible} collapseDelay={1000} />
-          <span className={styles.indexNumber} data-visible={visible}>
+          <span className={'indexNumber'} data-visible={visible}>
             {indexText}
           </span>
         </div>
-        <Heading level={3} as="h2" className={styles.title} data-visible={visible} id={titleId}>
+        <Heading level={3} as="h2" className={'title'} data-visible={visible} id={titleId}>
           {title}
         </Heading>
-        <Text className={styles.description} data-visible={visible} as="p">
+        <Text className={'description'} data-visible={visible} as="p">
           {description}
         </Text>
-        <div className={styles.button} data-visible={visible}>
+        <div className={'button'} data-visible={visible}>
           <Button iconHoverShift href={buttonLink} iconEnd="arrow-right">
             {buttonText}
           </Button>
@@ -100,12 +100,12 @@ export function ProjectSummary({
 
   function renderPreview(visible) {
     return (
-      <div className={styles.preview}>
+      <div className={'preview'}>
         {model.type === 'laptop' && (
           <>
             {renderBadge('laptop', visible, logo)}
-            <div className={styles.model} data-device="laptop">
-              {!modelLoaded && <Loader center className={styles.loader} data-visible={visible} />}
+            <div className={'model'} data-device="laptop">
+              {!modelLoaded && <Loader center className={'loader'} data-visible={visible} />}
               {isHydrated && visible && (
                 <Suspense>
                   <Model
@@ -127,8 +127,8 @@ export function ProjectSummary({
         {model.type === 'phone' && (
           <>
             {renderBadge('phone', visible, logo)}
-            <div className={styles.model} data-device="phone">
-              {!modelLoaded && <Loader center className={styles.loader} data-visible={visible} />}
+            <div className={'model'} data-device="phone">
+              {!modelLoaded && <Loader center className={'loader'} data-visible={visible} />}
               {isHydrated && visible && (
                 <Suspense>
                   <Model
@@ -161,7 +161,7 @@ export function ProjectSummary({
 
   return (
     <Section
-      className={styles.summary}
+      className={'summary'}
       data-alternate={alternate}
       data-first={index === 1}
       onFocus={() => setFocused(true)}
@@ -173,7 +173,7 @@ export function ProjectSummary({
       tabIndex={-1}
       {...rest}
     >
-      <div className={styles.content}>
+      <div className={'content'}>
         <Transition in={sectionVisible || focused}>
           {({ visible }) => (
             <>

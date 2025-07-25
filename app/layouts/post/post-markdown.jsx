@@ -5,40 +5,40 @@ import { Link } from '~/components/link';
 import { List, ListItem } from '~/components/list';
 import { Text } from '~/components/text';
 import { Children } from 'react';
-import styles from './post-markdown.module.css';
+
 import { Link as RouterLink } from '@remix-run/react';
 
 const PostHeadingLink = ({ id }) => {
   return (
-    <RouterLink className={styles.headingLink} to={`#${id}`} aria-label="Link to heading">
+    <RouterLink className={'headingLink'} to={`#${id}`} aria-label="Link to heading">
       <Icon icon="link" />
     </RouterLink>
   );
 };
 
 const PostH1 = ({ children, id, ...rest }) => (
-  <Heading className={styles.heading} id={id} level={2} as="h1" {...rest}>
+  <Heading className={'heading'} id={id} level={2} as="h1" {...rest}>
     <PostHeadingLink id={id} />
     {children}
   </Heading>
 );
 
 const PostH2 = ({ children, id, ...rest }) => (
-  <Heading className={styles.heading} id={id} level={3} as="h2" {...rest}>
+  <Heading className={'heading'} id={id} level={3} as="h2" {...rest}>
     <PostHeadingLink id={id} />
     {children}
   </Heading>
 );
 
 const PostH3 = ({ children, id, ...rest }) => (
-  <Heading className={styles.heading} id={id} level={4} as="h3" {...rest}>
+  <Heading className={'heading'} id={id} level={4} as="h3" {...rest}>
     <PostHeadingLink id={id} />
     {children}
   </Heading>
 );
 
 const PostH4 = ({ children, id, ...rest }) => (
-  <Heading className={styles.heading} id={id} level={5} as="h4" {...rest}>
+  <Heading className={'heading'} id={id} level={5} as="h4" {...rest}>
     <PostHeadingLink id={id} />
     {children}
   </Heading>
@@ -54,7 +54,7 @@ const PostParagraph = ({ children, ...rest }) => {
   }
 
   return (
-    <Text className={styles.paragraph} size="l" as="p" {...rest}>
+    <Text className={'paragraph'} size="l" as="p" {...rest}>
       {children}
     </Text>
   );
@@ -63,11 +63,11 @@ const PostParagraph = ({ children, ...rest }) => {
 const PostLink = ({ ...props }) => <Link {...props} />;
 
 const PostUl = props => {
-  return <List className={styles.list} {...props} />;
+  return <List className={'list'} {...props} />;
 };
 
 const PostOl = props => {
-  return <List className={styles.list} ordered {...props} />;
+  return <List className={'list'} ordered {...props} />;
 };
 
 const PostLi = ({ children, ...props }) => {
@@ -75,35 +75,35 @@ const PostLi = ({ children, ...props }) => {
 };
 
 const PostCode = ({ children, ...rest }) => (
-  <code className={styles.code} {...rest}>
+  <code className={'code'} {...rest}>
     {children}
   </code>
 );
 
 const PostPre = props => {
   return (
-    <div className={styles.pre}>
+    <div className={'pre'}>
       <Code {...props} />
     </div>
   );
 };
 
 const PostBlockquote = props => {
-  return <blockquote className={styles.blockquote} {...props} />;
+  return <blockquote className={'blockquote'} {...props} />;
 };
 
 const PostHr = props => {
-  return <hr className={styles.hr} {...props} />;
+  return <hr className={'hr'} {...props} />;
 };
 
 const PostStrong = props => {
-  return <strong className={styles.strong} {...props} />;
+  return <strong className={'strong'} {...props} />;
 };
 
 const PostImage = ({ src, alt, width, height, ...rest }) => {
   return (
     <img
-      className={styles.image}
+      className={'image'}
       src={src}
       loading="lazy"
       alt={alt}
@@ -116,7 +116,7 @@ const PostImage = ({ src, alt, width, height, ...rest }) => {
 
 const Embed = ({ src }) => {
   return (
-    <div className={styles.embed}>
+    <div className={'embed'}>
       <iframe src={src} loading="lazy" title="Embed" />
     </div>
   );
